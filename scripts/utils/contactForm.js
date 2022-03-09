@@ -5,8 +5,10 @@ const firstError = document.getElementById("firstError");
 const lastName = document.getElementById("lastName");
 const lastError = document.getElementById("lastError");
 const mail = document.getElementById("email");
-const emailError = document.getElementById("emailError");
 const formField= document.getElementById("form-field");
+
+const emailError = document.getElementById("emailError");
+const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 
 // launch modal event
 function displayModal() {
@@ -85,21 +87,46 @@ function validationLast () {
 }
 
 //Check validation for Email
+function validationEmail() {
+  emailError.innerHTML = '';
+  emailError.classList.remove('errorStyle');
+  mail.classList.remove('errorForm');
+
+  //Email Blank
+if (mail.value == "") {
+  emailError.innerHTML = 'Veuillez siasir une adresse email.';
+  emailError.classList.add('errorStyle');
+  mail.classList.add('errorForm');
+  return false;
+  //Email validate
+  } else if (!mail.value.match(mailRegex)) {
+    emailError.innerHTML = 'Adresse email invalide.';
+    emailError.classList.add('errorStyle')
+    mail.classList.add('errorForm')
+    return false;
+  } else {
+    emailError.innerHTML = '';
+    return true;
+  }
+}
 
 //Listen for events in each input and launch the associated function 
 firstName.addEventListener("input", validationFirst);
 lastName.addEventListener("input", validationLast);
+mail.addEventListener("input", validationEmail);
 
 //Sending the forms 
 formField.addEventListener("submit", (event) => {
   event.preventDefault();
   validationFirst();
   validationLast();
+  validationEmail();
 
   //Check if all conditions are met 
   if (
     validationFirst() == true &&
-    validationLast() == true
+    validationLast() == true &&
+    validationEmail() ==true
   ) {
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");
