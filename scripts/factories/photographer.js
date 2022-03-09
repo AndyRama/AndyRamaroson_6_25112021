@@ -1,6 +1,5 @@
 function photographerFactory(data) {
-  const { name, portrait, city, country, tagline, price } = data;
-
+  const { name, portrait, city, country, tagline, price, id } = data;
   const picture = `assets/photographers/${portrait}`;
 
 	function getUserCardDOM() {
@@ -25,11 +24,17 @@ function photographerFactory(data) {
 		sPrice.classList.add('price');
 		sPrice.textContent = `${price}€/jour`;
 
+		//link profile
+		function linkProfile() {
+			window.open(`photographer.html?id=${id}`);
+		}
+
 		article.appendChild(img);
 		article.appendChild(h2);
 		article.appendChild(hCity)
 		article.appendChild(pTagLine);
 		article.appendChild(sPrice);
+		article.addEventListener("click", linkProfile);
 
 		return (article);
 	}
