@@ -7,10 +7,12 @@ const lastError = document.getElementById("lastError");
 const mail = document.getElementById("email");
 const emailError = document.getElementById("emailError");
 
+// Reset form error
+
 //Check validation for firstname
 function validationFirst () {
   if (firstName.value.trim().length == 0) {
-    firstError.innerHTML = 'xxxx';
+    firstError.innerHTML = 'Veuillez siasir votre prénom.';
     firstError.classList.add("errorStyle");
     firstName.classList.add('errorForm');
     return false;
@@ -24,6 +26,7 @@ function validationFirst () {
     return true
   }
 }
+
 //Check validation for lastname
 //Check validation for Email
 
