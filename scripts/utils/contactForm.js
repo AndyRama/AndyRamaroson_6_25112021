@@ -62,18 +62,45 @@ function validationFirst () {
 }
 
 //Check validation for lastname
+function validationLast () {
+  //
+  lastError.innerHTML = "";
+  lastError.classList.remove("errorStyle");
+  lastName.classList.remove("errorForm");
+
+  if (lastName.value.trim().length == 0) {
+    lastError.innerHTML = "Veuillez siasir votre nom.";
+    lastError.classList.add("errorStyle");
+    lastName.classList.add("errorForm");
+    return false;
+  } else if (lastName.value.trim().length < 2) {
+    lastError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    lastError.classList.add("errorStyle");
+    lastName.classList.add("errorForm");
+    return false;
+  } else {
+    lastError.innerHTML = "";
+    return true
+  }
+}
+
 //Check validation for Email
 
 //Listen for events in each input and launch the associated function 
 firstName.addEventListener("input", validationFirst);
+lastName.addEventListener("input", validationLast);
 
 //Sending the forms 
 formField.addEventListener("submit", (event) => {
   event.preventDefault();
   validationFirst();
+  validationLast();
 
   //Check if all conditions are met 
-  if (validationFirst() == true ) {
+  if (
+    validationFirst() == true &&
+    validationLast() == true
+  ) {
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
