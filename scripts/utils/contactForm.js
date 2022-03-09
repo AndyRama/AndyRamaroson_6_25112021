@@ -7,6 +7,7 @@ const lastError = document.getElementById("lastError");
 const mail = document.getElementById("email");
 const formField= document.getElementById("form-field");
 
+//Check patern Email
 const emailError = document.getElementById("emailError");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 
@@ -30,13 +31,13 @@ const clearInput = () => {
   //remove error form
   const resetErrorBorder = document.querySelectorAll("input")
   resetErrorBorder.forEach((element) => {
-      element.classList.remove("errorForm");
+    element.classList.remove("errorForm");
   });
 
   //remove error message
   const resetErrorMessage = document.querySelectorAll(".result")
   resetErrorMessage.forEach((message) => {
-      message.innerHTML = "";
+    message.innerHTML = "";
   });
 };
 
@@ -92,7 +93,7 @@ function validationEmail() {
   emailError.classList.remove('errorStyle');
   mail.classList.remove('errorForm');
 
-  //Email Blank
+//Email Blank
 if (mail.value == "") {
   emailError.innerHTML = 'Veuillez siasir une adresse email.';
   emailError.classList.add('errorStyle');
