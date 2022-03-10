@@ -6,6 +6,7 @@ const lastName = document.getElementById("lastName");
 const lastError = document.getElementById("lastError");
 const mail = document.getElementById("email");
 const formField= document.getElementById("form-field");
+const mess = document.getElementById("message");
 
 //Check patern Email
 const emailError = document.getElementById("emailError");
@@ -43,21 +44,26 @@ const clearInput = () => {
 
 //Check validation for firstname
 function validationFirst () {
-  //
+  //Reset error message
   firstError.innerHTML = "";
   firstError.classList.remove("errorStyle");
   firstName.classList.remove("errorForm");
 
+  //Every time the user types something
+  //We check the validity of the first name field
+  //If nothing is written or if there are only spaces
   if (firstName.value.trim().length == 0) {
-    firstError.innerHTML = "Veuillez siasir votre prénom.";
-    firstError.classList.add("errorStyle");
-    firstName.classList.add("errorForm");
+    firstError.innerHTML = "Veuillez saisir votre prénom.";//add message
+    firstError.classList.add("errorStyle");//add a class to the error message
+    firstName.classList.add("errorForm");//add a class to the input area
     return false;
+    //if there are less than 2 characters or only spaces
   } else if (firstName.value.trim().length < 2) {
     firstError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     firstError.classList.add("errorStyle");
     firstName.classList.add("errorForm");
     return false;
+    //if all conditions are met 
   } else {
     firstError.innerHTML = "";
     return true
@@ -66,21 +72,26 @@ function validationFirst () {
 
 //Check validation for lastname
 function validationLast () {
-  //
+  //Reset error message
   lastError.innerHTML = "";
   lastError.classList.remove("errorStyle");
   lastName.classList.remove("errorForm");
 
+  //Every time the user types something
+  //We check the validity of the first name field
+  //If nothing is written or if there are only spaces
   if (lastName.value.trim().length == 0) {
-    lastError.innerHTML = "Veuillez siasir votre nom.";
-    lastError.classList.add("errorStyle");
-    lastName.classList.add("errorForm");
+    lastError.innerHTML = "Veuillez saisir votre prénom.";//add message
+    lastError.classList.add("errorStyle");//add a class to the error message
+    lastName.classList.add("errorForm");//add a class to the input area
     return false;
+    //if there are less than 2 characters or only spaces
   } else if (lastName.value.trim().length < 2) {
-    lastError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    lastError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     lastError.classList.add("errorStyle");
     lastName.classList.add("errorForm");
     return false;
+    //if all conditions are met 
   } else {
     lastError.innerHTML = "";
     return true
@@ -95,7 +106,7 @@ function validationEmail() {
 
 //Email Blank
 if (mail.value == "") {
-  emailError.innerHTML = 'Veuillez siasir une adresse email.';
+  emailError.innerHTML = 'Veuillez saisir une adresse email.';
   emailError.classList.add('errorStyle');
   mail.classList.add('errorForm');
   return false;
@@ -111,10 +122,28 @@ if (mail.value == "") {
   }
 }
 
+//Blank message
+function validationMessage () {
+  messageError.innerHTML = '';
+  messageError.classList.remove('errorStyle');
+  mess.classList.remove('errorForm');
+
+  if (message.value == "") {
+    messageError.innerHTML = 'Veuillez saisir votre message.';
+    messageError.classList.add('errorStyle');
+    mess.classList.add('errorForm');
+    return false;
+  } else {
+    messageError.innerHTML = '';
+    return true
+  }
+}
+
 //Listen for events in each input and launch the associated function 
 firstName.addEventListener("input", validationFirst);
 lastName.addEventListener("input", validationLast);
 mail.addEventListener("input", validationEmail);
+message.addEventListener("input", validationMessage);
 
 //Sending the forms 
 formField.addEventListener("submit", (event) => {
@@ -122,12 +151,14 @@ formField.addEventListener("submit", (event) => {
   validationFirst();
   validationLast();
   validationEmail();
+  validationMessage();
 
   //Check if all conditions are met 
   if (
     validationFirst() == true &&
     validationLast() == true &&
-    validationEmail() ==true
+    validationEmail() ==true && 
+    validationMessage() == true
   ) {
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");

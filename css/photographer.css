@@ -87,11 +87,16 @@ form input {
 
 .errorStyle {
   color: #ee0c0c;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .errorForm {
+  border: 2px solid #ee0c0c;
+}
+
+#form-field textarea.errorForm {
   border: 2px solid #ee0c0c;
 }
 
