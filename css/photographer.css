@@ -5,7 +5,10 @@
 .photograph-header {
   background-color: #FAFAFA;
   height: 300px;
-  margin: 0 100px;
+  margin: 20px 100px;
+  display:flex ;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .contact_button {
@@ -19,7 +22,6 @@
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 50px;
 }
 
 .modal {
@@ -119,3 +121,30 @@ input {
   resize: none;
   font-size: larger;
 }
+
+.profil-title {
+  font-weight: 400;
+  font-size: 64px;
+  color: #D3573C;
+  margin-bottom:0;
+}
+
+.location {
+  font-weight: 400;
+  font-size: 24px;
+  color: #901C1C;
+  margin-top :0;
+}
+
+.slogan {
+  font-weight: 400;
+  font-size: 18px;
+  color: #525252
+}
+
+#thumbs {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
