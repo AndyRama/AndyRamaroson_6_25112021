@@ -23,6 +23,17 @@
         <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
         <img src="./assets/photographers/MimiKeel.jpg" alt="" id="thumbs">
       </div>
+      <div id="filtre">
+        <label id="label_trier">Trier par</label>
+        <div id="menu-dropdown" aria-expanded="false" href="#">
+          <button aria-labelledby="order-button" aria-label="Order by" id="btnDropdown" class="btnDropdown">Date</button>
+          <div id="dropdownContent" class="dropdown-content">
+            <p class="dropdownItem" id="dropdownFirst popularity" tabindex="0" data-filter-type="review">Popularité</p>
+            <p class="dropdownItem" id="date" tabindex="0" data-filter-type="date">Date</p>
+            <p class="dropdownItem" id="title" tabindex="0" data-filter-type="titre">Type</p>
+          </div>
+        </div>
+      </div>
     </main>
     <div id="contact_modal">
 			<div class="modal">

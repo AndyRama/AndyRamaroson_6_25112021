@@ -22,6 +22,7 @@
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: -40px;
 }
 
 .modal {
@@ -78,7 +79,7 @@ form input {
   border-radius: 5px;
 }
 
-/*Formulaire*/
+/*Modal contact form*/
 #form-field {
   margin-top: 50px;
 }
@@ -148,3 +149,41 @@ input {
 	border-radius: 50%;
 }
 
+#label_trier {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*filtre section*/
+#filtre {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 50px 100px;
+}
+
+#menu_dropdown {
+  display: inline-flex;
+}
+
+.btnDropdown {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 16px;
+  width: 170px;
+  padding-left: 25px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  margin-left: 50px;
+  position: relative;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+}
+
+.btnDropdown:hover,
+.btnDropdown:focus {
+  background-color: #D3573C;
+}
