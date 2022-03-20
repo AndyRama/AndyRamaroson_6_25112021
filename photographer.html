@@ -15,68 +15,150 @@
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <div class="presentation">
-          <h1 class="profil-title">Mimi Kell</h1>
-          <h3 class="location">London, UK</h3>
-          <p class="slogan">Voir dans le quotidien</p>
+      <div class="container">
+        <div class="photograph-header">
+          <div class="presentation">
+            <h1 class="profil-title">Mimi Kell</h1>
+            <h3 class="location">London, UK</h3>
+            <p class="slogan">Voir dans le quotidien</p>
+          </div>
+          <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
+          <img src="./assets/photographers/MimiKeel.jpg" alt="" id="thumbs">
         </div>
-        <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
-        <img src="./assets/photographers/MimiKeel.jpg" alt="" id="thumbs">
       </div>
-      <div id="filtre">
-        <label id="label_trier">Trier par</label>
-        <div id="menu-dropdown" aria-expanded="false" href="#">
-          <button aria-labelledby="order-button" aria-label="Order by" id="btnDropdown" class="btnDropdown">Date</button>
-          <div id="dropdownContent" class="dropdown-content">
-            <p class="dropdownItem" id="dropdownFirst popularity" tabindex="0" data-filter-type="review">Popularité</p>
-            <p class="dropdownItem" id="date" tabindex="0" data-filter-type="date">Date</p>
-            <p class="dropdownItem" id="title" tabindex="0" data-filter-type="titre">Type</p>
+
+      <div class="filtre-container">
+        <div id="filtre">
+          <label id="label_trier">Trier par</label>
+          <div id="menu-dropdown" aria-expanded="false" href="#">
+            <button aria-labelledby="order-button" aria-label="Order by" id="btnDropdown" class="btnDropdown">Date</button>
+            <div id="dropdownContent" class="dropdown-content">
+              <p class="dropdownItem" id="dropdownFirst popularity" tabindex="0" data-filter-type="review">Popularité</p>
+              <p class="dropdownItem" id="date" tabindex="0" data-filter-type="date">Date</p>
+              <p class="dropdownItem" id="title" tabindex="0" data-filter-type="titre">Type</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cards">
-        <!-- card photo -->
-        <a class="card" href="#">
-          <img src="./assets/photos/Animals_Rainbow.jpg" alt="Animal" class ="card-img">
-          <footer class="card-footer">
-            <div class="card-content">
-              <h4 class="card-title">Arc-en-cie</h4>              
-              <div class="card__btn">
-                <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+      </div>  
+
+      <div class="card-container">
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Animals_Rainbow.jpg" alt="Animal" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
               </div>
-            </div>
-          </footer>
-        </a>
+            </footer>
+          </a>
+        </div>
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Travel_Lonesome.jpg" alt="paysage" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Event_SeasideWedding.jpg" alt="Wedding table" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Portrait_Background.jpg" alt="portrait" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Event_PintoWedding.jpg" alt="picture wedding" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards">
+          <!-- card photo -->
+          <a class="card" href="#">
+            <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
       </div>
+      <div class="price__badge">299 081<i class="fas fa-heart" id="like"></i>300€/jour</div>
+
     </main>
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form name="form-field" id="form-field" method="get" action="index.html">
-          <label>Prénom</label>
-          <input type="text" id="firstName"/>
-					<div class="result" id="firstError"></div>
-
-          <label>Nom</label>
-          <input type="text" id="lastName"/>
-					<div class="result" id="lastError"></div>
-
-          <label>Email</label>
-          <input type="text" id="email"/>
-					<div class="result" id="emailError"></div>
-
-          <label>Votre message</label>
-          <textarea type="textarea" id="message"></textarea>
-          <div class="result" id="messageError"></div>
-
-          <button class="submit contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        <!-- <div class=" bground"> -->
+        <div class="modal">
+          <header>
+            <h2>Contactez-moi</h2>
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </header>
+          <form name="form-field" id="form-field" method="get" action="index.html">
+            <label>Prénom</label>
+            <input type="text" id="firstName"/>
+            <div class="result" id="firstError"></div>
+            
+            <label>Nom</label>
+            <input type="text" id="lastName"/>
+            <div class="result" id="lastError"></div>
+            
+            <label>Email</label>
+            <input type="text" id="email"/>
+            <div class="result" id="emailError"></div>
+            
+            <label>Votre message</label>
+            <textarea type="textarea" id="message"></textarea>
+            <div class="result" id="messageError"></div>
+            
+            <button class="submit contact_button">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    <!-- </div> -->
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
