@@ -42,10 +42,10 @@
       </div>  
 
       <div class="card-container">
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
-            <img src="./assets/photos/Animals_Rainbow.jpg" alt="Animal" class ="card-img">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
+            <img src="./assets/photos/Animals_Rainbow.jpg" alt="Animal" class ="card-img" aria-label="image closeup view">
             <footer class="card-footer">
               <div class="card-content">
                 <h4 class="card-title">Arc-en-cie</h4>              
@@ -56,9 +56,9 @@
             </footer>
           </a>
         </div>
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
             <img src="./assets/photos/Travel_Lonesome.jpg" alt="paysage" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -70,9 +70,9 @@
             </footer>
           </a>
         </div>
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
             <img src="./assets/photos/Event_SeasideWedding.jpg" alt="Wedding table" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -84,9 +84,9 @@
             </footer>
           </a>
         </div>
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
             <img src="./assets/photos/Portrait_Background.jpg" alt="portrait" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -98,9 +98,9 @@
             </footer>
           </a>
         </div>
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
             <img src="./assets/photos/Event_PintoWedding.jpg" alt="picture wedding" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -112,9 +112,51 @@
             </footer>
           </a>
         </div>
-        <div class="cards">
+        <div class="cards" >
           <!-- card photo -->
-          <a class="card" href="#">
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
+            <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards" >
+          <!-- card photo -->
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
+            <img src="./assets/photos/Portrait_Background.jpg" alt="portrait" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards" >
+          <!-- card photo -->
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
+            <img src="./assets/photos/Event_PintoWedding.jpg" alt="picture wedding" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card__btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+        <div class="cards" >
+          <!-- card photo -->
+          <a class="card"  href="#" onclick="displayligthBoxModal()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -127,8 +169,7 @@
           </a>
         </div>
       </div>
-      <div class="price__badge">299 081<i class="fas fa-heart" id="like"></i>300€/jour</div>
-
+      <div class="price_badge">299 081<i class="fas fa-heart" id="like"></i>300€/jour</div>
     </main>
     <div id="contact_modal">
         <!-- <div class=" bground"> -->
@@ -158,7 +199,40 @@
           </form>
         </div>
       </div>
-    <!-- </div> -->
+      <!-- LIGHTBOX -->
+      <!-- <div class="lightBoxModal-bg" id="ligthBox" >
+        <div class="lightBoxModal">
+          <button class="close-lightBox" id="X-close" onclick="closeligthBoxModal()">&#10006;</button>
+          <button class="btn-float-left" id="btn-left" value="left"></button>
+          <button class="btn-float-right" id="btn-right" value="right"></button>
+          <img src="./assets/photos/Animals_Rainbow.jpg" alt="picture wedding" class ="cardBox-img">
+          <footer class="card-footer">
+            <div class="card-content">
+              <h4 class="card-title">Arc-en-cie<span class="card-counter">11<i class="fas fa-heart"></i></span></h4>              
+                
+            </div>
+          </footer>
+        </div>
+      </div> -->
+      <div class="lightBoxModal-bg" id="ligthBox" >
+        <div class="lightBoxModal" >
+          <div class="cards">
+            <!-- card photo galery -->
+            <a class="card"  href="#" onclick="displayligthBoxModal()">
+              <div class="close-lightBox" id="X-close" onclick="closeligthBoxModal()">&#10006;</div>
+              <div class="btn-arrow-left fas fa-chevron-left" id="btn-left" value="left"></div>
+              <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="cardBox-img">
+              <div class="btn-arrow-right fas fa-chevron-right" id="btn-right" value="right"></div>
+              <footer class="card-footer">
+                <div class="card-content">
+                  <h4 class="card-title">Arc-en-cie</h4> 
+                  <br>             
+                </div>
+              </footer>
+            </a>
+          </div>
+        </div>
+      </div>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
