@@ -296,6 +296,8 @@ input {
   align-items: center;
   justify-content: space-around;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 /* LigthBox */
@@ -316,36 +318,36 @@ input {
 }
 
 .cardBox-img {
-  height: 90vh;
-  width: 1200px;
+  height: 80vh;
+  width: 700px;
   border-radius: 5px;
 }
 
 .close-lightBox{
-  position: fixed;
-  top: 15px;
-  right: 500px;
+  position: absolute;
+  top: -15px;
+  right: 550px;
   color:#901C1C;
   font-size: 50px;
 }
 
 .btn-arrow-left{
-  position: fixed;
+  position: absolute;
   height: 40px;
   width: 40px;
-  top: 600px;
-  left: 500px;
+  top: 50%;
+  left: 0;
   text-decoration: none;
   color:#901C1C;
   font-size: 50px;
 }
 
 .btn-arrow-right{
-  position: fixed;
+  position: absolute;
   height: 40px;
   width: 40px;
-  top: 580px;
-  right: 500px;
+  top: 45%;
+  right: 550px;
   text-decoration: none;
   color:#901C1C;
   font-size: 50px;
