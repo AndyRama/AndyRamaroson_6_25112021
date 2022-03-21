@@ -1,19 +1,11 @@
 #contact_modal {
   display: none;
-  transform: translateY(-100rem);
-  background-color: (128, 128, 128, 0.5);
-  height: 100%;
+  transform: translateY(-120rem);
+  height: 300vh;
   width: 100%;
-  left: 0;
-  top: 0;
-  overflow: auto;
-  padding-top: 10rem;
-  /* position: fixed; */
-}
-
-.bground {
-  display: none;
-
+  background-color: rgba(192, 189, 189, 0.5);
+  margin-top: -50px;
+  padding-top: 50px;
 }
 
 .photograph-header {
@@ -42,14 +34,14 @@
 .modal {
   border-radius: 5px;
   background-color: #DB8876;
-  width: 50%;
+  width: 670px;
+  max-height: 970px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
   margin: auto;
-  /* margin-top: -20px; */
 }
 
 
@@ -240,20 +232,13 @@ input {
   width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* flex-wrap: wrap; */
 }
 
 .cards {
-  /* margin: 1rem; */
   margin-left: 7rem;
   display: flex;
   margin-bottom: 5rem;
   margin-top: 5rem;
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
-  /* align-content: center; */
-  /* background-color: red; */
-  /* width: 30%; */
 }
 
 .card {
@@ -269,8 +254,6 @@ input {
 
 .card-content {
   display: flex;
-  /* justify-content: space-around; */
-  /* width: 350px; */
   height: 30px;
   position: relative;
   font-size: 24px;
@@ -281,7 +264,6 @@ input {
   top: -80%;
   left: 0;
   color:#901C1C;
-  /* font-weight: 400; */
 }
 
 .card-counter {
@@ -304,7 +286,6 @@ input {
 }
 
 .price_badge {
-  /* border: 2px solid #901C1C ; */
   width: 300px;
   height: 50px;
   position: fixed;
@@ -318,25 +299,12 @@ input {
 }
 
 /* LigthBox */
-/* .bground {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
-} */
-
 .lightBoxModal-bg {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  /* background-color: rgba(128, 128, 128, 0.5); */
   background-color: white;
   display: none;
 }
@@ -363,7 +331,6 @@ input {
 
 .btn-arrow-left{
   position: fixed;
-  /* background-color: green;  */
   height: 40px;
   width: 40px;
   top: 600px;
@@ -375,7 +342,6 @@ input {
 
 .btn-arrow-right{
   position: fixed;
-  /* background-color: red;  */
   height: 40px;
   width: 40px;
   top: 580px;
