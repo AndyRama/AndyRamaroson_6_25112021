@@ -1,10 +1,10 @@
-function profileFactories(photographObject) {
-  const { name, city, country, tagline, portrait, id, medias, price} = photographObject;
+function profileFactories(photographeObject) {
+  const { name, city, country, tagline, portrait, id, medias, price} = photographeObject;
   const picture = `assets/photographers/${portrait}`;
 
   function fillPagePhotographe() {
     const contact = document.querySelector(".contact_button");
-    // const article = document.querySelector(".article");
+    const article = document.querySelector('.article');
 
     //Thumbs
     const img = document.getElementById('thumbs');
