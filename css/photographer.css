@@ -35,7 +35,7 @@
   border-radius: 5px;
   background-color: #DB8876;
   width: 670px;
-  max-height: 970px;
+  /* max-height: 970px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -326,7 +326,7 @@ input {
 .close-lightBox{
   position: absolute;
   top: -15px;
-  right: 550px;
+  right: 63rem;
   color:#901C1C;
   font-size: 50px;
 }
@@ -335,8 +335,8 @@ input {
   position: absolute;
   height: 40px;
   width: 40px;
-  top: 50%;
-  left: 0;
+  top: 48%;
+  left: 2rem;
   text-decoration: none;
   color:#901C1C;
   font-size: 50px;
@@ -347,7 +347,7 @@ input {
   height: 40px;
   width: 40px;
   top: 45%;
-  right: 550px;
+  right: 63rem;
   text-decoration: none;
   color:#901C1C;
   font-size: 50px;

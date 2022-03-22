@@ -81,13 +81,13 @@ function validationLast () {
   //We check the validity of the first name field
   //If nothing is written or if there are only spaces
   if (lastName.value.trim().length == 0) {
-    lastError.innerHTML = "Veuillez saisir votre prénom.";//add message
+    lastError.innerHTML = "Veuillez saisir votre nom.";//add message
     lastError.classList.add("errorStyle");//add a class to the error message
     lastName.classList.add("errorForm");//add a class to the input area
     return false;
     //if there are less than 2 characters or only spaces
   } else if (lastName.value.trim().length < 2) {
-    lastError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
+    lastError.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     lastError.classList.add("errorStyle");
     lastName.classList.add("errorForm");
     return false;
