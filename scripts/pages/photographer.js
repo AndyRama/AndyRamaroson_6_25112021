@@ -4,14 +4,15 @@ async function getPhotographerById() {
   let medias = [];
 	let paramsUrlProfile = new URLSearchParams(window.location.search)
   let id = paramsUrlProfile.get('id');
-	await fetch("/data/photographers.json")
+
+	await fetch("photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
     // console.log(photographers);
 
     let photographeObject = photographers.find(photographe => photographe.id == id)
 
-    await fetch("/data/photographers.json")
+    await fetch("photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (medias = data.media))
     // console.log(medias);
@@ -25,8 +26,6 @@ async function getPhotographerById() {
 async function displayDataPhotograph(photographer) {
   const photographerModel = profileFactories(photographer);
   photographerModel.fillPagePhotographe();
-
-
 };
 
 async function init() {

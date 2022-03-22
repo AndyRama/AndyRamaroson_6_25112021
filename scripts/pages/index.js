@@ -3,7 +3,7 @@ async function getPhotographers() {
 	let photographers = [];
 	
 	// and return the photographers array only once 
-	await fetch("/data/photographers.json")
+	await fetch("photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
 	return { photographers}

@@ -18,12 +18,12 @@
       <div class="container">
         <div class="photograph-header">
           <div class="presentation">
-            <h1 class="profil-title">Mimi Kell</h1>
-            <h3 class="location">London, UK</h3>
-            <p class="slogan">Voir dans le quotidien</p>
+            <h1 class="profil-title"></h1>
+            <h3 class="location"></h3>
+            <p class="slogan"></p>
           </div>
           <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
-          <img src="./assets/photographers/MimiKeel.jpg" id="thumbs" alt="" >
+          <img src="" id="thumbs" alt="" >
         </div>
       </div>
 
@@ -169,15 +169,16 @@
           </a>
         </div>
       </div>
-      <div class="price_badge">299 081<i class="fas fa-heart" id="like"></i>300€/jour</div>
+      <div class="price_badge">299 081<i  class="fas fa-heart" id="price"></i>300€ /jour</div>
     </main>
     <div id="contact_modal" >
         <!-- <div class=" bground"> -->
         <div class="modal">
           <header>
             <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+            <img src="assets/icons/close.svg" onclick="closeModal()" />         
           </header>
+          <br><br><h3 id="fullName">Andy Ramaroson</h3>
           <form name="form-field" id="form-field" method="get" action="index.html">
             <label>Prénom</label>
             <input type="text" id="firstName"/>

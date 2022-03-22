@@ -14,8 +14,17 @@ header {
 }
 
 h1 {
+	width: 100%;
 	color: #901C1C;
 	margin-right: 100px;
+}
+
+#fullName {
+	color: black;
+	font-weight: 400;
+	font-size: 64px;
+	margin-top: 0;
+	margin-bottom: -3rem;
 }
 
 .logo {
