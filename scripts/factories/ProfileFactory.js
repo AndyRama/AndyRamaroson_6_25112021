@@ -1,12 +1,13 @@
-function profileFactories(profile) {
-  const { name, city, country, tagline, portrait, id} = profile;
+function profileFactories(photographObject) {
+  const { name, city, country, tagline, portrait, id, medias } = photographObject;
   const picture = `assets/photographers/${portrait}`;
 
-  function cardProfile() {
+  function fillPagePhotographe() {
     const contact = document.querySelector(".contact_button");
+
     //Thumbs
     const img = document.getElementById('thumbs');
-    // img.setAttribute("src", picture)      
+    img.setAttribute("src", picture)      
 
     //FullName
     const title = document.querySelector('.profil-title');
@@ -29,6 +30,16 @@ function profileFactories(profile) {
       ligthModalbg.style.display = "block";
     }
 
+    ////add price
+		// const sPrice = document.createElement('span');
+		// sPrice.classList.add('price');
+		// sPrice.textContent = `${price}€/jour`;
+
+		////link profile
+		// function linkProfile() {
+		// 	window.open(`photographer.html?id=${id}`);
+		// }
+
     article.appendChild(img);
     article.appendChild(title);
     article.appendChild(location);
@@ -38,5 +49,5 @@ function profileFactories(profile) {
 
     return (article);
   }
-  return { name, picture, cardProfile}
+  return { name, picture,fillPagePhotographe }
 }
