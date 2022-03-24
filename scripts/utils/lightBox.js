@@ -1,7 +1,7 @@
 //Ligth control OPEN and CLOSE
 const OpenLightBox = document.querySelectorAll(".cards");
-const ligthModalbg = document.querySelector(".lightBoxModal-bg");
 const closeLigthModal = document.getElementById("x-close");
+const ligthModalbg = document.querySelector(".lightBoxModal-bg");
 
 // launch modal light event
 function displayLightModal() {

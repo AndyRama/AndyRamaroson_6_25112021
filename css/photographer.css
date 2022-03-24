@@ -43,7 +43,6 @@
   margin: auto;
 }
 
-
 .modal header {
   justify-content: space-between;
   width: 100%;
@@ -84,6 +83,7 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 36px;
 }
 
 /*Modal contact form*/
@@ -125,9 +125,8 @@ input {
   border-radius: 5px;
   padding: 8px;
   border: 2px solid #DB8876;
-  font-size: larger;
-  resize: none;
-  font-size: larger;
+  font-size: 36px;
+  font-weight: normal!important;
 }
 
 .profil-title {
@@ -279,14 +278,13 @@ input {
 }
 
 .card-like {
-  margin-left: 0;
-  margin-top: 3px;
+  margin-left: -6rem;
   color:#901C1C;
 }
 
 .price_badge {
   width: 300px;
-  height: 50px;
+  height: 30px;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -296,8 +294,9 @@ input {
   justify-content: space-between;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 16px;
-  /* text-align: inline; */
+  font-size: 24px;
+  padding: 1rem;
+  text-align: right;
 }
 
 /* LigthBox */

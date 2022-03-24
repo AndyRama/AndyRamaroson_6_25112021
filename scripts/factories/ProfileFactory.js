@@ -4,7 +4,6 @@ function profileFactories(photographeObject) {
 
   function fillPagePhotographe() {
     const contact = document.querySelector(".contact_button");
-    const article = document.querySelector('.article');
 
     //Thumbs
     const img = document.getElementById('thumbs');
