@@ -1,6 +1,6 @@
 #contact_modal {
   display: none;
-  transform: translateY(-120rem);
+  transform: translateY(-60rem);
   height: 300vh;
   width: 100%;
   background-color: rgba(192, 189, 189, 0.5);

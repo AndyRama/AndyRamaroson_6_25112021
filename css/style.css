@@ -14,8 +14,11 @@ header {
 }
 
 h1 {
-	/* width: 100%; */
 	color: #901C1C;
+}
+
+h1.title {
+	margin-right: 2rem;
 }
 
 #fullName {
