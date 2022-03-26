@@ -47,7 +47,7 @@ h1.title {
 	margin-bottom: 100px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1079px) {
 	#container{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -119,8 +119,8 @@ h1.title {
 }
 
 .photographer_section article p {
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-top: 0.2rem;
+	margin-bottom: 0.3rem;
 	font-size: 13px;
 }
 
