@@ -3,11 +3,9 @@ function profileFactories(photographeObject) {
   const picture = `assets/photographers/${portrait}`;
 
   function fillPagePhotographe() {
-    const contact = document.querySelector(".contact_button");
-
     //Thumbs
     const img = document.getElementById('thumbs');
-    img.setAttribute("src", picture)      
+    img.setAttribute("src", picture);      
 
     //FullName
     const title = document.querySelector('.profil-title');
@@ -28,21 +26,20 @@ function profileFactories(photographeObject) {
     //FullName in modalContact
     const photographeName = document.getElementById("fullName");
 		photographeName.innerHTML = name;
-   
-    // launch modal light event
-    function displayLightModal() {
-      ligthModalbg.style.display = "block";
-    }
-
+    
     article.appendChild(img);
     article.appendChild(title);
     article.appendChild(location);
     article.appendChild(catchWords);
     article.appendChild(photographeName);
     article.appendChild(priceDay);
-    article.addEventListener("click", displayLightModal);
+    article.appendChild(name);
 
+    closeLightBox();
+    displayLightBox();
+    
     return (article);
   }
-  return { name, picture,fillPagePhotographe }
+  return { name, picture, fillPagePhotographe}
 }
+

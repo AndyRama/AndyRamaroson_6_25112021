@@ -44,7 +44,7 @@
       <div class="card-container">
         <div class="cards" >
           <!-- card photo -->
-          <a class="card"  href="#" onclick="displayLightModal()">
+          <a class="card"  href="#" onclick="displayLightBox()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -58,7 +58,7 @@
         </div>
         <div class="cards" >
           <!-- card photo -->
-          <a class="card"  href="#" onclick="displayLightModal()">
+          <a class="card"  href="#" onclick="displayLightBox()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -72,7 +72,7 @@
         </div>
         <div class="cards" >
           <!-- card photo -->
-          <a class="card"  href="#" onclick="displayLightModal()">
+          <a class="card"  href="#" onclick="displayLightBox()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
@@ -85,7 +85,7 @@
           </a>
         </div>
       </div>
-      </div>
+      <!-- </div> -->
       <span class="price_badge">111 000<i class="card-like fas fa-heart"></i><div id="price"></div></span>
     </main>
     <div id="contact_modal">
@@ -119,15 +119,16 @@
     </div>
 
     <!-- LIGHTBOX -->
-    <!-- <div class="lightBoxContainer">
-      <div id="ligthBoxBody">
-        <i class="fas fa-times X-close"></i>
+    <div class="lightBoxContainer">
+      <div id="lightBoxBody">
+        <i class="fas fa-times X-close" onclick="closeLightBox()" ></i>
         <i class="fas fa-chevron-left leftIcon"></i>
         <i class="fas fa-chevron-right rightIcon"></i>
         <div id="photoGalery"></div>
+        <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
         <div id="photoTitle">Photo title</div>
       </div>
-    </div> -->
+    </div>
   
     <script src="/scripts/factories/ProfileFactory.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>

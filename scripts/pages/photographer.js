@@ -19,9 +19,11 @@ async function getPhotographerById() {
 
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray
-    // console.log(photographeObject);
+    // console.log(photographeObject.medias[8].video); 
+  
 	return { photographer: photographeObject }
 }
+
 
 async function displayDataPhotograph(photographer) {
   const photographerModel = profileFactories(photographer);

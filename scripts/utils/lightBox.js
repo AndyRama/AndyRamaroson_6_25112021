@@ -1,16 +1,16 @@
 //Mettre le code JavaScript lié à la page photographer.html
-const OpenLightBox = document.querySelectorAll(".cards");
-const LigthModalbg = document.querySelector(".lightBoxModal-bg");
-const closeLigthModal = document.getElementById("x-close");
+// const OpenLightBox = document.querySelectorAll(".cards");
+// const closeLigthModal = document.getElementById("x-close");
 
 // launch modal light event
-function displayLightModal() {
-  const modal = document.querySelector(".lightBoxModal-bg");
-  modal.style.display = "block";
+function displayLightBox() {
+  const lightBox = document.getElementById("lightBoxBody");
+  lightBox.style.display = "block";
+//   const modal = document.querySelector(".lightBoxModal-bg");
 }
 
 //Close modal light 
-function closeLightModal() {
-  const modal = document.querySelector(".lightBoxModal-bg");
-  modal.style.display = "none";
+function closeLightBox() {
+  const lightBox = document.getElementById("lightBoxBody");
+  lightBox.style.display = "none";
 } 
