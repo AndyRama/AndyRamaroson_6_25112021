@@ -27,29 +27,56 @@
         </div>
       </div>
 
-      <div class="filtre-container">
-        <div id="filtre">
-          <label id="label_trier">Trier par</label>
-          <div id="menu-dropdown" aria-expanded="false" href="#">
-            <button aria-labelledby="order-button" aria-label="Order by" id="btnDropdown" class="btnDropdown">Date</button>
-            <div id="dropdownContent" class="dropdown-content">
-              <p class="dropdownItem" id="dropdownFirst popularity" tabindex="0" data-filter-type="review">Popularité</p>
-              <p class="dropdownItem" id="date" tabindex="0" data-filter-type="date">Date</p>
-              <p class="dropdownItem" id="title" tabindex="0" data-filter-type="titre">Type</p>
-            </div>
+      <span class="trier-par-txt">Trier par</span>
+      <div class="dropdown">
+          <i class="fas fa-chevron-down" id="drop-down-btn"></i>
+          <button  class="dropbtn trierBtn">Popularité</button>
+          <i class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></i>
+          <div id="myDropdown" class="dropdown-content">
+              <a href="#" class="trierBtn">Date</a>
+              <a href="#" class="trierBtn">Titre</a>
           </div>
-        </div>
-      </div>  
+      </div>
 
       <div class="card-container">
         <div class="cards" >
           <!-- card photo -->
+          <a class="card" href="#" onclick="displayLightBox()">
+            <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-cie</h4>              
+                <div class="card_btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+
+        <div class="cards" >
+          <!-- card photo -->
           <a class="card"  href="#" onclick="displayLightBox()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
                 <h4 class="card-title">Arc-en-cie</h4>              
-                <div class="card__btn">
+                <div class="card_btn">
+                  <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
+                </div>
+              </div>
+            </footer>
+          </a>
+        </div>
+
+        <div class="cards" >
+          <!-- card photo -->
+          <a class="card"  href="#" onclick="displayLightBox()">
+            <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-ciel</h4>              
+                <div class="card_btn">
                   <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
                 </div>
               </div>
@@ -62,31 +89,30 @@
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
-                <h4 class="card-title">Arc-en-cie</h4>              
-                <div class="card__btn">
+                <h4 class="card-title">Arc-en-ciel</h4>              
+                <div class="card_btn">
                   <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
                 </div>
               </div>
             </footer>
           </a>
-        </div>
+        </div>      
         <div class="cards" >
           <!-- card photo -->
           <a class="card"  href="#" onclick="displayLightBox()">
             <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
             <footer class="card-footer">
               <div class="card-content">
-                <h4 class="card-title">Arc-en-cie</h4>              
-                <div class="card__btn">
+                <h4 class="card-title">Arc-en-ciel</h4>              
+                <div class="card_btn">
                   <span class="card-counter">11<i class="card-like fas fa-heart"></i></span>
                 </div>
               </div>
             </footer>
           </a>
         </div>
-      </div>
-      <!-- </div> -->
-      <span class="price_badge">111 000<i class="card-like fas fa-heart"></i><div id="price"></div></span>
+     
+      <span class="price_badge" id="likes">111 000<i class="card-like fas fa-heart"></i><div id="price"></div></span>
     </main>
     <div id="contact_modal">
       <div class="modal">
@@ -118,21 +144,43 @@
       </div>
     </div>
 
-    <!-- LIGHTBOX -->
+    <!-- LIGHTBOX v1-->
+    <!-- <div id="lightBox" >
+      <div class="lightBoxModal" >
+        <div class="cards"> -->
+          <!-- card photo galery -->
+          <!-- <a class="card"  href="#">
+            <div class="close-lightBox" id="X-close" onclick="closeLightBox()">&#10006;</div>
+            <div class="btn-arrow-left fas fa-chevron-left" id="btn-left" value="left"></div>
+            <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="cardBox-img">
+            <div class="btn-arrow-right fas fa-chevron-right" id="btn-right" value="right"></div>
+            <footer class="card-footer">
+              <div class="card-content">
+                <h4 class="card-title">Arc-en-ciel</h4> 
+                <br>             
+              </div>
+            </footer>
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- LIGHTBOX v2-->
     <div class="lightBoxContainer">
       <div id="lightBoxBody">
-        <i class="fas fa-times X-close" onclick="closeLightBox()" ></i>
+        <i class="fas fa-times X-close closeIcon" onclick="closeLightBox()" ></i>
+        <img src="" alt="kid" class ="cardBox-img">
         <i class="fas fa-chevron-left leftIcon"></i>
         <i class="fas fa-chevron-right rightIcon"></i>
         <div id="photoGalery"></div>
-        <img src="./assets/photos/Portrait_Wednesday.jpg" alt="kid" class ="card-img">
-        <div id="photoTitle">Photo title</div>
+        <div id="photoTitle"></div>
       </div>
     </div>
   
     <script src="/scripts/factories/ProfileFactory.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
-    <script src="/scripts/utils/lightBox.js"></script>
+    <script src="/scripts/utils/dropdown.js"></script>
+    <!-- <script src="/scripts/utils/lightBox.js"></script> -->
     <script src="/scripts/pages/photographer.js"></script>
 
   </body>

@@ -29,6 +29,16 @@ h1.title {
 	margin-bottom: -1rem;
 }
 
+#photoTitle {
+	color: #901C1C;
+	font-size: 24px;
+	text-align: left;
+	font-weight: bold;
+	position: relative;
+	top: 0;
+	right: -4rem;
+}
+
 .logo {
 	height: 50px;
 	margin-left: 100px;
@@ -137,3 +147,4 @@ h1.title {
 	border-radius: 50%;
 	object-fit: cover;
 }
+

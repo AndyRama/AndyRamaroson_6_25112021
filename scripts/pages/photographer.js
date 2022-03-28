@@ -2,28 +2,27 @@
 async function getPhotographerById() {
 	let photographers = [];
   let medias = [];
-	let paramsUrlProfile = new URLSearchParams(window.location.search)
+	let paramsUrlProfile = new URLSearchParams(window.location.search);
   let id = paramsUrlProfile.get('id');
 
-	await fetch("photographers.json")
+	await fetch("./photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
     // console.log(photographers);
 
     let photographeObject = photographers.find(photographe => photographe.id == id)
 
-    await fetch("photographers.json")
+    await fetch("./photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (medias = data.media))
     // console.log(medias);
 
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray
-    // console.log(photographeObject.medias[8].video); 
+    // console.log(mediaArray[1].image); 
   
 	return { photographer: photographeObject }
 }
-
 
 async function displayDataPhotograph(photographer) {
   const photographerModel = profileFactories(photographer);

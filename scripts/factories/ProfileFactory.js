@@ -1,9 +1,13 @@
 function profileFactories(photographeObject) {
-  const { name, city, country, tagline, portrait, id, medias, price} = photographeObject;
+  const { name, city, country, tagline, portrait, id, medias, price, video, image} = photographeObject;
   const picture = `assets/photographers/${portrait}`;
+  
+  // const { id, photographerId, altTxt, date, likes, name, price, tags, title, video, image } = data;
+  const picturephoto = `assets/photos/${image}`;
+  const pictureVideo = `assets/photos/${video}`;
 
   function fillPagePhotographe() {
-    //Thumbs
+    //Thumbs    
     const img = document.getElementById('thumbs');
     img.setAttribute("src", picture);      
 
@@ -26,7 +30,11 @@ function profileFactories(photographeObject) {
     //FullName in modalContact
     const photographeName = document.getElementById("fullName");
 		photographeName.innerHTML = name;
-    
+
+    //image pour test lightBox
+    // const boxImage = document.querySelector('.cardBox-img');
+    // boxImage.innerHTML = `<img src="assets/photos/${photo}" class="cardBox-img"></img>`;
+         
     article.appendChild(img);
     article.appendChild(title);
     article.appendChild(location);
@@ -34,12 +42,12 @@ function profileFactories(photographeObject) {
     article.appendChild(photographeName);
     article.appendChild(priceDay);
     article.appendChild(name);
+    // article.appendChild(boxImage);
 
-    closeLightBox();
     displayLightBox();
-    
+    closeLightBox();
+
     return (article);
   }
   return { name, picture, fillPagePhotographe}
 }
-
