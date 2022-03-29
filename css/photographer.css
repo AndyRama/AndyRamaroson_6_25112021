@@ -290,11 +290,11 @@ input {
 
 #price{
   color:black;
-  margin-left: -4rem;
+  margin-left: 5rem;
 }
 
 .card-like {
-  margin-left: -6rem;
+  /* text-align: right; */
   color:#901C1C;
 }
 

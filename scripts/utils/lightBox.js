@@ -4,7 +4,10 @@ const closeLightBoxBtn = document.querySelector('.closeIcon');
 // Open the lightbox
 function displayLightBox(e){
   const title = e.getAttribute("data-title");
-  console.log(title);
+
+  const photoTitle = document.getElementById('photoTitle');
+  photoTitle.innerText = title;
+
   lightBoxbody.style.display = 'block';
 }
 
@@ -14,3 +17,4 @@ function closeLightBox(){
     lightBoxbody.style.display = 'none';
   })
 }
+
