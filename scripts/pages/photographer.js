@@ -19,20 +19,7 @@ async function getPhotographerById() {
 
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray
-    // console.log(mediaArray); 
 
-    const mediaData = mediaArray.filter(mediaArray => mediaArray.id);
-    // console.log(mediaData[8]);    
-
-    // let testImage = mediaData[8].video;
-    // let testTitle = mediaData[8].title;
-    // let testLikes = mediaData[8].likes;
-    // let testDate = mediaData[8].date;
-
-    // console.log(testImage);
-    // console.log(testTitle);
-    // console.log(testLikes);
-    // console.log(testDate);
       
 	return { photographer: photographeObject }
 }
