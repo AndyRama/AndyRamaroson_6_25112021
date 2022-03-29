@@ -166,7 +166,7 @@ input {
   background-color: #901C1C;
   color: white;
   padding: 0.5rem 3.08rem;
-  font-size: 16px;
+  font-size: 19px;
   border: 1px solid #901C1C;
   cursor: pointer;
   border-radius: 5px 5px 5px 5px;
@@ -198,12 +198,13 @@ input {
 .dropdown-content a {
   text-align: center;
   color: rgb(255, 255, 255);
-  padding: 0.5rem 4.1rem;
+  padding: 0.5rem 4.42rem;
   text-decoration: none;
   display: block;
   border-top: 2px solid white;
   margin: 0 0.5rem;
   font-weight: bold;  
+  font-size: 19px;
 }
 
 .show {
@@ -212,8 +213,8 @@ input {
 
 .fa-chevron-up{
   position: absolute;
-  top: 1.3rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: -1rem;
   color: white;
 }
 
@@ -226,15 +227,16 @@ input {
 }
 
 .trier-par-txt{
-  margin-left: 2.5rem;
-  font-weight: 500;
+  margin-left: 6rem;
+  font-weight: bold;
   font-family: sans-serif;
+  font-size: 19px;
 }
 
 .fa-chevron-down{
   position: absolute;
-  right: 1rem;
-  top: 1.3rem;;
+  right: -1rem;
+  top: 1.5rem;
   color: white;
   cursor: pointer;
 }
@@ -320,13 +322,13 @@ input {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(192, 189, 189, 0.5);
   z-index: 2;
   display: none;
 }
 
 #lightBoxBody{
   background-color: rgb(255, 255, 255);
+  /* background-color: grey; */
   display: none;
   width: 60%;
   height: 90%;
@@ -336,7 +338,6 @@ input {
   top: 3%;
   text-align: center;
   margin: 0 auto;
-  /* z-index: 3; */
 }
 
 .closeIcon{
@@ -366,7 +367,9 @@ input {
 }
 
 .cardBox-img {
-  height: 90vh;
-  width: 90vh;
+  height: 80vh;
+  width: 80vh;
   border-radius: 5px;
+  margin-top: 2.5rem;
+
 }

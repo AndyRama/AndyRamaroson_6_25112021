@@ -1,17 +1,13 @@
 function profileFactories(photographeObject) {
-  const { name, city, country, tagline, portrait, id, medias, price, photographeid,video, image} = photographeObject;
+  const { name, city, country, tagline, portrait, id, medias, price} = photographeObject;
   const picture = `assets/photographers/${portrait}`;
+  // const image = `assets/photos/${photo}`;
+  // const pictureVideo = `assets/photos/${video}`;
   
   const mediaArray = photographeObject.medias;
-  const mediaData = mediaArray.filter(mediaArray => mediaArray.id);
-  
-  // const { id, photographerId, altTxt, date, likes, name, price, tags, title, video, image } = data;
-  const picturephoto = `assets/photos/${image}`;
-  const pictureVideo = `assets/photos/${video}`;
+  const mediaData = mediaArray.filter(mediaArray => mediaArray.id);  
 
-  function fillPagePhotographe() {
-
-    
+  function fillPagePhotographe() {    
     //Thumbs    
     const img = document.getElementById('thumbs');
     img.setAttribute("src", picture);      
@@ -35,13 +31,20 @@ function profileFactories(photographeObject) {
     //FullName in modalContact
     const photographeName = document.getElementById("fullName");
 		photographeName.innerHTML = name;
-      
-    // const testImage = mIndex[1].image;
-    // console.log(testImage);
-    //image pour test lightBox
-    // const boxImage = document.querySelector('.cardBox-img');
-    // boxImage.innerHTML = `<img src="assets/photos/${testImage}" class="cardBox-img"></img>`;
 
+   //Test   
+    console.log(mediaArray); //Test pour voir toutes les images du photographe
+    console.log(mediaData[1]);//Test pour voir les données pour une image du photographe
+    console.log(mediaData[1].image);//Test pour voir images
+    console.log(mediaData[1].likes);//Test pour voir les likes
+
+    //Test afffichage une image
+    const photo1 = mediaData[1].image;
+    const boxImage = document.querySelector(".cardBox-img");
+    // boxImage.innerHTML = `<img src="./assets/photos/${photo1}" alt="placeHolder" class ="cardBox-img">`
+    // console.log(photo1);
+
+    mediaArray.keys ();
     article.appendChild(img);
     article.appendChild(title);
     article.appendChild(location);
@@ -49,6 +52,7 @@ function profileFactories(photographeObject) {
     article.appendChild(photographeName);
     article.appendChild(priceDay);
     article.appendChild(name);
+    article.appendChild(boxImage);
       
     return (article);
   }

@@ -22,7 +22,7 @@ async function getPhotographerById() {
     // console.log(mediaArray); 
 
     const mediaData = mediaArray.filter(mediaArray => mediaArray.id);
-    // console.log(mediaData[8]);
+    // console.log(mediaData[8]);    
 
     // let testImage = mediaData[8].video;
     // let testTitle = mediaData[8].title;
