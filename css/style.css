@@ -34,9 +34,19 @@ h1.title {
 	font-size: 24px;
 	text-align: left;
 	font-weight: bold;
-	position: relative;
-	top: 0;
-	right: -4rem;
+	position: fixed;
+	bottom: 10px;
+	left: 20%;
+}
+
+#videoTitle {
+  color: #901C1C;
+  font-size: 24px;
+  text-align: left;
+  font-weight: bold;
+  position: fixed;
+  top: 25px;
+  left: 5%;
 }
 
 .logo {

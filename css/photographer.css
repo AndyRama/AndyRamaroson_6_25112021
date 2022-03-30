@@ -1,6 +1,6 @@
 #contact_modal {
   display: none;
-  transform: translateY(-91rem);
+  transform: translateY(-165rem);
   height: 300vh;
   width: 100%;
   background-color: rgba(192, 189, 189, 0.5);
@@ -262,9 +262,10 @@ input {
 }
 
 .card-img {
-  height: 300px;
-  width: 350px;
+  height: 350px;
+  width: 400px;
   border-radius: 5px;
+  /* object-fit: cover; */
 }
 
 .card-content {
@@ -286,6 +287,16 @@ input {
   top: 20%;
   right: 0;
   color:#901C1C;
+}
+
+.card-video {
+  height: 350px;
+  width: 400px;
+  border-radius: 5px;
+}
+.card-video-light{
+  width: 90%;
+  height:80%;
 }
 
 #price{
@@ -327,9 +338,10 @@ input {
 }
 
 #lightBoxBody{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255);
   /* background-color: grey; */
   display: none;
+  /* display:block; */
   width: 60%;
   height: 90%;
   position: fixed;
@@ -371,5 +383,27 @@ input {
   width: 80vh;
   border-radius: 5px;
   margin-top: 2.5rem;
+}
 
+.lightBoxCounter {
+  position: fixed;
+  bottom: 1%;
+  right: 22%;
+  color:#901C1C;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lightBoxLike {
+  color:#901C1C;
+  position: absolute;
+  top: 4px;
+  right: -29px;
+}
+
+.containerBackground {
+  width: 100%;
+  height: 100%;
+  background-color: #525252!important;
+  z-index: 1;
 }

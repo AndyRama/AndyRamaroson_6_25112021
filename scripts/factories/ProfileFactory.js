@@ -27,19 +27,19 @@ function profileFactories(photographeObject) {
     const photographeName = document.getElementById("fullName");
 		photographeName.innerHTML = name;
 
-    //display media
-    // console.log(medias);
-    let nbLike = 0;
+    //display media video/image and count all hearts
     const cardContainer = document.querySelector('.card-container');
+    let nbLike = 0;
     medias.map(media => {
       nbLike += media.likes;
       let photoToDisplay;
       if(media.image){ 
         photoToDisplay = media.image;
+        //return card image with model
         const mediaCardImage = `
           <div class="cards" >      
             <a class="card"  href="#" data-title="${media.title}" onclick="displayLightBox(this)">
-              <img src="./assets/photos/${photoToDisplay}" alt="kid" class ="card-img">
+              <img src="./assets/photos/${photoToDisplay}" data-photo="${medias.image}"  alt="kid" class ="card-img">
               <footer class="card-footer">
                 <div class="card-content">
                   <h4 class="card-title">${media.title}</h4>              
@@ -51,13 +51,14 @@ function profileFactories(photographeObject) {
             </a>
           </div>
           `
-      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
+        cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
       } else {
         photoToDisplay = media.video;
+        //return card video with model and panel controle
         const mediaCardVideo = `
           <div class="cards" >      
             <a class="card"  href="#" data-title="${media.title}" onclick="displayLightBox(this)">
-            <video class ="card-img" alt="test" src="./assets/photos/${photoToDisplay}"></video>
+              <video class ="card-video" data-photo ="${media.video}" alt="test" src="./assets/photos/${photoToDisplay}"></video>
               <footer class="card-footer">
                 <div class="card-content">
                   <h4 class="card-title">${media.title}</h4>              
@@ -68,14 +69,50 @@ function profileFactories(photographeObject) {
               </footer>
             </a>
           </div>
-          `
-      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
+                `
+        cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
       }   
     })
-    displayLightBox();
-    closeLightBox();
-    displayModal();
-    closeModal();
+
+    //display media video/image in lightBox
+    const lightContainer = document.querySelector('.lightBoxContainer');
+    medias.map(media => {
+      let photoToDisplayBox;
+      if(media.image){ 
+        photoToDisplayBox = media.image;
+        console.log(medias);
+ 
+        //return card image with model
+        const mediaLightBoxImage = `
+        div class="containerBackground">
+          <div id="lightBoxBody" data-title="${media.title}">
+            <i class="fas fa-times X-close closeIcon" onclick="closeLightBox()"></i>
+            <img src="./assets/photos/${photoToDisplayBox}" alt="placeHolder" class ="cardBox-img">
+            <i class="fas fa-chevron-left leftIcon"></i>
+            <i class="fas fa-chevron-right rightIcon"></i>
+
+            <div id="photoTitle">${media.title}</div>
+            <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike fas fa-heart"></i></span>
+          </div>
+        </div>
+          `
+        lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxImage;
+      } else {
+        photoToDisplayBox = media.video;
+        //return card video with model and panel controle
+        const mediaLightBoxVideo = `
+          <div id="lightBoxBody" data-title="${media.title}">
+            <i class="fas fa-times X-close closeIcon" onclick="closeLightBox()"></i>
+            <video class ="card-video-light" data-photo ="${media.video}" alt="test" src="./assets/photos/${photoToDisplayBox}" controls="controls"></video>
+            <i class="fas fa-chevron-left leftIcon"></i>
+            <i class="fas fa-chevron-right rightIcon"></i>
+            <div id="videoTitle">${media.title}</div>
+          </div>
+          `
+        lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxVideo;
+      }
+    })
+        
     document.getElementById("nbLikes").innerText = nbLike;
   }
   return { name, picture, fillPagePhotographe}
