@@ -1,6 +1,6 @@
 #contact_modal {
   display: none;
-  transform: translateY(-165rem);
+  transform: translateY(-157rem);
   height: 300vh;
   width: 100%;
   background-color: rgba(192, 189, 189, 0.5);
@@ -247,13 +247,18 @@ input {
   width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  /* width: 1280px; */
+  justify-content: space-between;
+  align-content: center;
 }
 
 .cards {
+  /* background-color: red; */
   margin-left: 7rem;
   display: flex;
   margin-bottom: 5rem;
   margin-top: 5rem;
+  width: 400px;
 }
 
 .card {
@@ -269,24 +274,27 @@ input {
 }
 
 .card-content {
-  display: flex;
+  /* display: flex; */
   height: 30px;
   position: relative;
   font-size: 24px;
+  top: 100%;
 }
 
 .card-title {
-  position: absolute;
+  position: relative;
   top: -80%;
-  left: 0;
+  left: -25rem;
   color:#901C1C;
+  width: 350px;
 }
 
 .card-counter {
   position: absolute;
-  top: 20%;
-  right: 0;
+  top: 22%;
+  /* right: 0; */
   color:#901C1C;
+  left: -3.5rem;
 }
 
 .card-video {
@@ -296,7 +304,7 @@ input {
 }
 .card-video-light{
   width: 90%;
-  height:80%;
+  height:95%;
 }
 
 #price{
@@ -305,7 +313,7 @@ input {
 }
 
 .card-like {
-  /* text-align: right; */
+  margin-left: 2px;
   color:#901C1C;
 }
 
@@ -339,15 +347,13 @@ input {
 
 #lightBoxBody{
   background-color: rgba(255, 255, 255);
-  /* background-color: grey; */
   display: none;
-  /* display:block; */
   width: 60%;
   height: 90%;
   position: fixed;
   left: 50%;
   transform: translate(-50%,0);
-  top: 3%;
+  top: 2%;
   text-align: center;
   margin: 0 auto;
 }
@@ -379,15 +385,15 @@ input {
 }
 
 .cardBox-img {
-  height: 80vh;
+  height: 78vh;
   width: 80vh;
   border-radius: 5px;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .lightBoxCounter {
   position: fixed;
-  bottom: 1%;
+  bottom: 2%;
   right: 22%;
   color:#901C1C;
   font-size: 20px;
@@ -401,9 +407,3 @@ input {
   right: -29px;
 }
 
-.containerBackground {
-  width: 100%;
-  height: 100%;
-  background-color: #525252!important;
-  z-index: 1;
-}

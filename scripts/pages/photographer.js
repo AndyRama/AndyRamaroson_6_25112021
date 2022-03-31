@@ -18,7 +18,7 @@ async function getPhotographerById() {
     // console.log(medias);
 
     const mediaArray = medias.filter(media => media.photographerId == id)
-    photographeObject.medias = mediaArray
+    photographeObject.medias = mediaArray;
 
       
 	return { photographer: photographeObject }
