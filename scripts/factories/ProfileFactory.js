@@ -30,33 +30,31 @@ function profileFactories(photographeObject) {
 		photographeName.innerHTML = name;
 
     //Add likes
-    function addLikes (nbLikes) {
+    function addLikes () {
+      nbLike = 0;
       // Cible tous les coeur et ecoute les clicks
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
-          // A chaque click, on ajoute un +1 au chiffre et le stock
-          let nblikes = parseInt(icon.previousElementSibling.innerHTML)
-          nblikes++
-          // Charge et affiche le nouveau chiffre dans "mediaLikes"
-          icon.previousElementSibling.innerHTML = nblikes
+          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like.
           
+          // Charge et affiche le nouveau chiffre dans "mediaLikes"
+          const nblikes = document.getElementById("nbLikes");
+          
+          console.log(nblikes);
         }, { once: true }) // N'autorise qu'un click
       })
     }
-    
-    //display media video/image and count all hearts
+
+    //display media video/image in profile
     let nbLike = 0;
     medias.map(media => {
-      const { id, photographerId, date, likes, name, price, tags, title, video, image } = photographeObject.medias;
       const cardContainer = document.querySelector('.card-container');
       // console.log(photographeObject.medias);
       nbLike += media.likes;
-
       let photoToDisplay;
       if(media.image){ 
-        photoToDisplay = media.image;
-        
+        photoToDisplay = media.image;        
         //return card image with model
         const mediaCardImage = `
             <div class="cards" >      
@@ -96,18 +94,9 @@ function profileFactories(photographeObject) {
     const lightContainer = document.querySelector('.lightBoxContainer');
     medias.map(media => {
       let photoToDisplayBox;   
-      // let index = 0;   
+
       if(media.image){ 
         photoToDisplayBox = media.image;
-        gallery=[];
-
-        // console.log(photoToDisplayBox);
-        // new tableau avec index
-        // photoToDisplayBox.map(element, index => {
-        //     index += medias.id;
-        //     console.log(index);
-        //   })
-
         //return card image with model
         const mediaLightBoxImage = `
           <div id="lightBoxBody">
@@ -136,7 +125,7 @@ function profileFactories(photographeObject) {
       }
     })
   document.getElementById("nbLikes").innerText = nbLike;
-  addLikes ();
+  addLikes();
   }
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
 }
