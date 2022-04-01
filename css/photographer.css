@@ -1,11 +1,12 @@
 #contact_modal {
   display: none;
   transform: translateY(-157rem);
-  height: 300vh;
+  height: 350vh;
   width: 100%;
   background-color: rgba(192, 189, 189, 0.5);
   margin-top: -50px;
   padding-top: 50px;
+  /* position: fixed; */
 }
 
 .photograph-header {
@@ -35,7 +36,6 @@
   border-radius: 5px;
   background-color: #DB8876;
   width: 670px;
-  /* max-height: 970px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -241,19 +241,17 @@ input {
   cursor: pointer;
 }
 
-/* cards-image temporaire */
+/* cards-image NEW */
 .card-container {
   display: flex;
   width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* width: 1280px; */
   justify-content: space-between;
   align-content: center;
 }
 
 .cards {
-  /* background-color: red; */
   margin-left: 7rem;
   display: flex;
   margin-bottom: 5rem;
@@ -394,7 +392,7 @@ input {
 
 .lightBoxCounter {
   position: fixed;
-  bottom: 2%;
+  bottom: 10.5%;
   right: 22%;
   color:#901C1C;
   font-size: 20px;
@@ -403,7 +401,7 @@ input {
 
 .lightBoxLike {
   position: fixed;
-  bottom: 2.29%;
+  bottom: 11%;
   right: 19%;
   color: #901C1C;
   font-size: 20px;
@@ -417,4 +415,8 @@ input {
   color: #901C1C;
   font-size: 20px;
   font-weight: bold;
+}
+
+.body {
+  background-color: #525252;
 }
