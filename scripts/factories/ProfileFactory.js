@@ -31,17 +31,24 @@ function profileFactories(photographeObject) {
 
     //Add likes
     function addLikes () {
-      nbLike = 0;
       // Cible tous les coeur et ecoute les clicks
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
-          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like.
-          
-          // Charge et affiche le nouveau chiffre dans "mediaLikes"
-          const nblikes = document.getElementById("nbLikes");
-          
-          console.log(nblikes);
+          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like
+          totalLike += 1
+          nbLikes += 1
+          // Charge et affiche le nouveau chiffre dans "total"
+          const nblikes = document.getElementById("nbLikes"); 
+          nblikes.innerHTML = totalLike;     
+          console.log(totalLike);
+
+           // Charge et affiche le nouveau chiffre dans "counterLikeCard"
+          const addlikes = document.querySelectorAll(".card-counter"); 
+          // addlikes = nbLikes;
+          // addlikes.innerHTML = addlikes ;    
+          console.log(nbLikes);
+
         }, { once: true }) // N'autorise qu'un click
       })
     }
@@ -54,7 +61,7 @@ function profileFactories(photographeObject) {
       nbLike += media.likes;
       let photoToDisplay;
       if(media.image){ 
-        photoToDisplay = media.image;        
+        photoToDisplay = media.image;   
         //return card image with model
         const mediaCardImage = `
             <div class="cards" >      
@@ -105,7 +112,7 @@ function profileFactories(photographeObject) {
             <i class="fas fa-chevron-left leftIcon"></i>
             <i class="fas fa-chevron-right rightIcon"></i>
             <div id="photoTitle">${media.title}</div>
-            <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike heart fas fa-heart"></i></span>
+            <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike fas fa-heart"></i></span>
           </div>
           `
         lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxImage;
@@ -118,12 +125,13 @@ function profileFactories(photographeObject) {
             <video class ="card-video-light" data-photo ="${media.video}" alt="${media.title}" src="./assets/photos/${photoToDisplayBox}" controls="controls"></video>
             <i class="fas fa-chevron-left leftIcon"></i>
             <i class="fas fa-chevron-right rightIcon"></i>
-            <div id="videoTitle">${media.title}</div><i class="lightBoxLike heart fas fa-heart"></i></span>
+            <div id="videoTitle">${media.title}</div><i class="lightBoxLikeV fas fa-heart"></i></span>
           </div>
           `
         lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxVideo;
       }
     })
+  let totalLike = nbLike;
   document.getElementById("nbLikes").innerText = nbLike;
   addLikes();
   }
