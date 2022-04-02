@@ -3,11 +3,8 @@ function profileFactories(photographeObject) {
   const thumbs = `assets/photographers/${portrait}`;
   const picture = `assets/photos/${image}`;
   const pictureVideo = `assets/photos${video}`;
-  let currentPhotographerPhotos = [];
-  let currentLigthboxIndex = -1;
-  let likesTable = [];
-  let existingLikes = [];
-  let modifiedArray = [];
+  let newPhotographerPhotos = [];
+  let newArray = [];
 
   function fillPagePhotographe() {    
     //Thumbs    
@@ -35,9 +32,9 @@ function profileFactories(photographeObject) {
 		photographeName.innerHTML = name;
 
     //Add likes
-    function addLikes (photographeObject) {
+    function addLikes () {
       // Cible tous les coeur et ecoute les clicks
-      media = medias.likes;
+      let media = medias.likes;
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
@@ -45,7 +42,12 @@ function profileFactories(photographeObject) {
           totalLike += 1;
           // Charge et affiche le nouveau chiffre dans "total"
           const nblikes = document.getElementById("nbLikes"); 
+          const cardlikenow = document.querySelector(".card-counter");
+          // cardlikenow = cardlikenow.innerText;
+          // cardlikenow++;
+          console.log(cardlikenow);
           nblikes.innerHTML = totalLike;   
+          // cardlikenow.innerText = `${cardlikenow}`;
           // media = medias.likes;
         
           //MISSING ADD LIKE CARDS
@@ -102,7 +104,6 @@ function profileFactories(photographeObject) {
 
     //display media video/image in lightBox
     const lightContainer = document.querySelector('.lightBoxContainer');
-    // lightContainer.display.style = "background-color: rgba(192, 189, 189, 0.5)";
     medias.map(media => {
       let photoToDisplayBox;   
 
@@ -116,7 +117,7 @@ function profileFactories(photographeObject) {
             <i class="fas fa-chevron-left leftIcon"></i>
             <i class="fas fa-chevron-right rightIcon"></i>
             <div id="photoTitle">${media.title}</div>
-            <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike fas fa-heart"></i></span>
+            <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike heart fas fa-heart"></i></span>
           </div>
           `
         lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxImage;
@@ -129,7 +130,7 @@ function profileFactories(photographeObject) {
             <video class ="card-video-light" data-photo ="${media.video}" alt="${media.title}" src="./assets/photos/${photoToDisplayBox}" controls="controls"></video>
             <i class="fas fa-chevron-left leftIcon"></i>
             <i class="fas fa-chevron-right rightIcon"></i>
-            <div id="videoTitle">${media.title}</div><i class="lightBoxLikeV fas fa-heart"></i></span>
+            <div id="videoTitle">${media.title}</div><i class="lightBoxLikeV heart fas fa-heart"></i></span>
           </div>
           `
         lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxVideo;
@@ -139,7 +140,7 @@ function profileFactories(photographeObject) {
   document.getElementById("nbLikes").innerText = nbLike;
   addLikes();
   trier();
-  }
+}
   
 // btn Order
 function trier() {
@@ -148,29 +149,38 @@ function trier() {
     
     if( index == 0) {
       // sort by POPULARITY   
-      modifiedArray = medias.sort((a, b) => {return b.likes - a.likes})
-      console.log(modifiedArray);
-      currentPhotographerPhotos = modifiedArray.push(currentPhotographerPhotos);
+      newArray = medias.sort((a, b) => {return b.likes - a.likes})
+      console.log(newArray);
+      //supression des données presentes
       const newCard = document.querySelector(".card-container").innerHTML = "";
+      newPhotographerPhotos = newArray.push(newPhotographerPhotos);
       // INSERER NOUVEAUX TABLEAU
-
+      console.log(newPhotographerPhotos);
     } else if (index == 1) {
 
       // sort by DATE 
-      modifiedArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
-      console.log(modifiedArray);
+      newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
+      console.log(newArray);
+      //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
+      const newCard = document.querySelector(".card-container");
+ 
+      newPhotographerPhotos = newArray.push(newPhotographerPhotos);
+      console.log(newPhotographerPhotos);
+
       // INSERER NOUVEAUX TABLEAU
+
     } else if ( index == 2) {
 
       //sort by ALFABETIC ORDER
-     const title = medias.title 
-      modifiedArray = photographeObject.medias.sort((a, b) => {
+      newArray = photographeObject.medias.sort((a, b) => {
       if(a.title.toLowerCase() < b.title.toLowerCase()) { return -1;}
       else if (a.title.toLowerCase() > b.title.toLowerCase()) {return 1;}
       })
-      console.log(modifiedArray);
+      //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
+      newPhotographerPhotos = newArray.slice(newPhotographerPhotos);
+      console.log(newPhotographerPhotos);  
       // INSERER NOUVEAUX TABLEAU
       }
     }));

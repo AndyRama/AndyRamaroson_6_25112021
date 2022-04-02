@@ -20,3 +20,5 @@ function closeLightBox(){
   })
 }
 
+//Control pannel
+
