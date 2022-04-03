@@ -34,24 +34,18 @@ function profileFactories(photographeObject) {
     //Add likes
     function addLikes () {
       // Cible tous les coeur et ecoute les clicks
-      let media = medias.likes;
+      
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
           // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like
+          
           totalLike += 1;
           // Charge et affiche le nouveau chiffre dans "total"
           const nblikes = document.getElementById("nbLikes"); 
-          const cardlikenow = document.querySelector(".card-counter");
-          // cardlikenow = cardlikenow.innerText;
-          // cardlikenow++;
-          console.log(cardlikenow);
-          nblikes.innerHTML = totalLike;   
-          // cardlikenow.innerText = `${cardlikenow}`;
-          // media = medias.likes;
-        
-          //MISSING ADD LIKE CARDS
-          
+          nblikes.innerHTML = totalLike; 
+          // medias.like = addlikes;
+
         }, { once: true }) // N'autorise qu'un click
       })
     }
@@ -60,13 +54,13 @@ function profileFactories(photographeObject) {
     let nbLike = 0;
     medias.map(media => {
       nbLike += media.likes;
+ 
       const cardContainer = document.querySelector('.card-container');
-      // console.log(photographeObject.medias);     
-
       let photoToDisplay;
+
       if(media.image){ 
-        photoToDisplay = media.image;   
-             
+        photoToDisplay = media.image; 
+
         //return card image with model
         const mediaCardImage = `
             <div class="cards" >      
@@ -88,7 +82,7 @@ function profileFactories(photographeObject) {
         const mediaCardVideo = `
           <div class="cards" >      
             <a class="card" href="#" data-title="${media.title}" onclick="displayLightBox(this)">
-              <video class ="card-video" alt="${media.title}" src="./assets/photos/${photoToDisplay}"></video>
+              <video class ="card-video" alt="${media.title}"  src="./assets/photos/${photoToDisplay}"></video>
             </a>
             <div class="card-content">
               <h4 class="card-title">${media.title}</h4>              
@@ -100,7 +94,7 @@ function profileFactories(photographeObject) {
         `
         cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
       }   
-    })
+    })  
 
     //display media video/image in lightBox
     const lightContainer = document.querySelector('.lightBoxContainer');
@@ -144,31 +138,24 @@ function profileFactories(photographeObject) {
   
 // btn Order
 function trier() {
+  const picture = `assets/photos/${image}`;
+  const pictureVideo = `assets/photos${video}`;
+
   const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {
     
     if( index == 0) {
       // sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
-      console.log(newArray);
       //supression des données presentes
-      const newCard = document.querySelector(".card-container").innerHTML = "";
-      newPhotographerPhotos = newArray.push(newPhotographerPhotos);
-      // INSERER NOUVEAUX TABLEAU
-      console.log(newPhotographerPhotos);
+      document.querySelector(".card-container").innerHTML = "";
+     
     } else if (index == 1) {
 
       // sort by DATE 
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
-      console.log(newArray);
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
-      const newCard = document.querySelector(".card-container");
- 
-      newPhotographerPhotos = newArray.push(newPhotographerPhotos);
-      console.log(newPhotographerPhotos);
-
-      // INSERER NOUVEAUX TABLEAU
 
     } else if ( index == 2) {
 
@@ -179,10 +166,8 @@ function trier() {
       })
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
-      newPhotographerPhotos = newArray.slice(newPhotographerPhotos);
-      console.log(newPhotographerPhotos);  
-      // INSERER NOUVEAUX TABLEAU
-      }
+      }    
+      // fillPagePhotographe(newArray);
     }));
   }
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}

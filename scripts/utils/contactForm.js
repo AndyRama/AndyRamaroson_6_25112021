@@ -161,10 +161,10 @@ formField.addEventListener("submit", (event) => {
     validationMessage() == true
   ) {
     //value input in the console
-    console.log(firstName.value);
-    console.log(lastName.value);
-    console.log(mail.value);
-    console.log(message.value);
+    // console.log(firstName.value);
+    // console.log(lastName.value);
+    // console.log(mail.value);
+    // console.log(message.value);
 
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");
