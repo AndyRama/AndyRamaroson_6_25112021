@@ -3,7 +3,7 @@ function profileFactories(photographeObject) {
   const thumbs = `assets/photographers/${portrait}`;
   const picture = `assets/photos/${image}`;
   const pictureVideo = `assets/photos${video}`;
-  let newPhotographerPhotos = [];
+
   let newArray = [];
 
   function fillPagePhotographe() {    
@@ -33,19 +33,17 @@ function profileFactories(photographeObject) {
 
     //Add likes
     function addLikes () {
-      // Cible tous les coeur et ecoute les clicks
-      
+      // Cible tous les coeur et ecoute les clicks      
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
-          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like
-          
+          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like          
           totalLike += 1;
           // Charge et affiche le nouveau chiffre dans "total"
           const nblikes = document.getElementById("nbLikes"); 
           nblikes.innerHTML = totalLike; 
           // medias.like = addlikes;
-
+          const value = document.querySelector(".card-counter");        
         }, { once: true }) // N'autorise qu'un click
       })
     }
@@ -54,7 +52,7 @@ function profileFactories(photographeObject) {
     let nbLike = 0;
     medias.map(media => {
       nbLike += media.likes;
- 
+
       const cardContainer = document.querySelector('.card-container');
       let photoToDisplay;
 
@@ -98,11 +96,23 @@ function profileFactories(photographeObject) {
 
     //display media video/image in lightBox
     const lightContainer = document.querySelector('.lightBoxContainer');
+
+    
     medias.map(media => {
+      let index = 0
+      // console.log(media.index);
       let photoToDisplayBox;   
 
-      if(media.image){ 
+      if(media.image) { 
         photoToDisplayBox = media.image;
+        // console.log(medias[index].image);
+        // index = medias[index].image;
+        // // index = index + 1
+        // medias.forEach((media,index) => {
+        //   display = medias[id];
+        //   console.log(medias[index]);
+        // })
+        
         //return card image with model
         const mediaLightBoxImage = `
           <div id="lightBoxBody">
@@ -149,6 +159,7 @@ function trier() {
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
+      console.log(newArray);
      
     } else if (index == 1) {
 
@@ -156,6 +167,8 @@ function trier() {
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
+      console.log(newArray);
+      // fillPagePhotographe(newArray);
 
     } else if ( index == 2) {
 
@@ -166,10 +179,12 @@ function trier() {
       })
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
-      }    
-      // fillPagePhotographe(newArray);
-    }));
+      console.log(newArray);
+    }    
+    // fillPagePhotographe(newArray);
+  }));
   }
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
 }
+
 

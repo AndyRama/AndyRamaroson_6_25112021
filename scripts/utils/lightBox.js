@@ -1,14 +1,15 @@
 // Open the lightbox
 function displayLightBox(e){
   const title = e.getAttribute("data-title");
- 
+    
   const photoTitle = document.getElementById('photoTitle');
   photoTitle.innerText = title;
-  console.log(e);
-
-  const photo = document.querySelector("cardBox-img");
+  
   const lightBoxbody = document.getElementById('lightBoxBody');
   lightBoxbody.style.display = 'block';
+ 
+  const hidenPart = document.getElementById("myDropdown");
+  hidenPart.classList.remove("show");
 }
 
 // close the lightbox
