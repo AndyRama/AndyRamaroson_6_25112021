@@ -52,94 +52,14 @@ function profileFactories(photographeObject) {
 
     //display media video/image in profile
     let nbLike = 0;
+    displayMedias(medias);
     medias.map(media => {
-      nbLike += media.likes;
-
-      const cardContainer = document.querySelector('.card-container');
-      let photoToDisplay;
-
-      if(media.image){ 
-        photoToDisplay = media.image; 
-
-        //return card image with model
-        const mediaCardImage = `
-            <div class="cards" >      
-              <a class="card" href="#" data-title="${media.title}" onclick="displayLightBox(this)">
-                <img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">
-              </a>
-              <div class="card-content">
-                <h4 class="card-title">${media.title}</h4>              
-                <div class="card_btn">
-                  <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
-                </div>
-              </div>
-            </div>
-           `
-        cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
-      } else {
-        photoToDisplay = media.video;
-        //return card video with model and panel controle
-        const mediaCardVideo = `
-          <div class="cards" >      
-            <a class="card" href="#" data-title="${media.title}" onclick="displayLightBox(this)">
-              <video class ="card-video" alt="${media.title}"  src="./assets/photos/${photoToDisplay}"></video>
-            </a>
-            <div class="card-content">
-              <h4 class="card-title">${media.title}</h4>              
-              <div class="card_btn">
-                <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
-              </div>
-            </div>
-          </div>
-        `
-        cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
-      }   
-    })  
-
-    //display media video/image in lightBox
-    const lightContainer = document.querySelector('.lightBoxContainer');
-
-    medias.map(media => {
-      let photoToDisplayBox;   
-      if(media.image) { 
-        photoToDisplayBox = media.image;
-        //return card image with model
-        const mediaLightBoxImage = `
-            <div id="lightBoxBody">
-              <i class="fas fa-times X-close closeIcon" " data-title="${media.title}" onclick="closeLightBox(this)"></i>
-              <img src="./assets/photos/${photoToDisplayBox}" alt="${media.title}" class ="cardBox-img">
-              <i class="fas fa-chevron-left leftIcon"></i>
-              <i class="fas fa-chevron-right rightIcon"></i>
-              <div id="photoTitle">${media.title}</div>
-              <span class="lightBoxCounter">${media.likes}<i class="lightBoxLike heart fas fa-heart"></i></span>
-            </div>
-          `
-        lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxImage;
-      } else {
-        photoToDisplayBox = media.video;
-        //return card video with model and panel controle
-        const mediaLightBoxVideo = `
-            <div id="lightBoxBody">
-              <i class="fas fa-times X-close closeIcon" data-title="${media.title}" onclick="closeLightBox(this)"></i>
-              <video class ="card-video-light" data-photo ="${media.video}" alt="${media.title}" src="./assets/photos/${photoToDisplayBox}" controls="controls"></video>
-              <i class="fas fa-chevron-left leftIcon"></i>
-              <i class="fas fa-chevron-right rightIcon"></i>
-              <div id="videoTitle">${media.title}</div><i class="lightBoxLikeV heart fas fa-heart"></i></span>
-            </div>
-          `
-        lightContainer.innerHTML = lightContainer.innerHTML + mediaLightBoxVideo;
-      }
-    })
+      nbLike += media.likes;    
+    })      
   let totalLike = nbLike;
   document.getElementById("nbLikes").innerText = nbLike;
-  addLikes();
-  trier();
-}
-  
-// Btn Order
-function trier() {
-  const picture = `assets/photos/${image}`;
-  const pictureVideo = `assets/photos${video}`;
+  addLikes();  
+  }
 
   const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {
@@ -150,7 +70,7 @@ function trier() {
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
-      console.log(newArray);
+      displayMedias(newArray);
      
     } else if (index == 1) {
 
@@ -158,7 +78,7 @@ function trier() {
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
-      console.log(newArray);
+      displayMedias(newArray);
  
     } else if ( index == 2) {
 
@@ -169,104 +89,62 @@ function trier() {
       })
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
-      console.log(newArray);
+      displayMedias(newArray);
     }  
     // fillPagePhotographe(newArray);
   }));
-  }
+
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
 }
 
-// change photos NEXT or PREVIOUS
-// function panelControl() {
-//   const previousBtn = document.querySelector('.leftIcon');
-//   const nextBtn = document.querySelector('.rightIcon');
-//   const photoDom = document.querySelector('cardBox-img');
-//   const photoTitleDom = document.getElementById('photoTitle');
+function displayMedias(medias) {
+  medias.map(media => {
+  const cardContainer = document.querySelector('.card-container');
+  let photoToDisplay;
 
-//   let newPhotographerPhotos = [];
-//   let photoTitle = [];
-//   let newLigthboxIndex = -1; 
+    if(media.image){ 
+      photoToDisplay = media.image; 
 
-//   const src = newPhotographerPhotos[index];
-//   const srcTitle = photoTitle[index]; 
+      //return card image with model
+      const mediaCardImage = `
+          <div class="cards" >      
+            <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="image" onclick="displayLightBox('${media.title}','${photoToDisplay}','image','${media.id}')">
+              <img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">
+            </a>
+            <div class="card-content">
+              <h4 class="card-title">${media.title}</h4>              
+              <div class="card_btn">
+                <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
+              </div>
+            </div>
+          </div>
+        `
+      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
+    } else {
+      photoToDisplay = media.video;
+      //return card video with model and panel controle
+      const mediaCardVideo = `
+        <div class="cards" >      
+          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="video"   onclick="displayLightBox('${media.title}','${photoToDisplay}','video','${media.id}')">
+            <video class ="card-video" alt="${media.title}"  src="./assets/photos/${photoToDisplay}"></video>
+          </a>
+          <div class="card-content">
+            <h4 class="card-title">${media.title}</h4>              
+            <div class="card_btn">
+              <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
+            </div>
+          </div>
+        </div>
+      `
+      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
+    }
+  })
 
-//   previousBtn.addEventListener('click', () => {
-//     newLigthboxIndex -= 1;
-//     if (newLigthboxIndex < 0) {
-//       newLigthboxIndex = newPhotographerPhotos.length - 1;
-//     }
-//     const src = newPhotographerPhotos[newLigthboxIndex];
-//     photoDom.innerHTML = `<img src="${src}" />`;
+}
 
-//     if (newLigthboxIndex < 0){
-//       newLigthboxIndex = photoTitle.length - 1;
-//     }
-//     const srcTitle = photoTitle[newLigthboxIndex]; 
-//     photoTitleDom.innerHTML = `${srcTitle}`;
-//   });
+// Btn Order
 
-//   nextBtn.addEventListener('click', () => {
-//     newLigthboxIndex += 1;
-//     if (newLigthboxIndex > newPhotographerPhotos.length - 1) {
-//       newLigthboxIndex = 0;
-//     }
-//     const src = newPhotographerPhotos[newLigthboxIndex];
-//     photoDom.innerHTML = `<img src="${src}" />`;
+  
+  
 
-//     if (newLigthboxIndex > photoName.length - 1){
-//        newLigthboxIndex = 0;    
-//     }
-//     const srcTitle = photoTitle[newLigthboxIndex]; 
-//     photoTitleDom.innerHTML = `${srcTitle}`;
-//   })
-// }
 
-// //lightBox using keyboard
-// document.addEventListener('keydown', (key) => {
-//   //ENTER KEY
-//   if(key.code == "Enter") {
-//   }
-
-//   //Esc KEY
-//   else if(key.code == "Escape"){
-//     const lightBoxcontainer = document.getElementById('lightBoxBody');
-//     lightBoxcontainer.style.display = 'none';
-//   }
-
-//   //ArrowRight KEY
-//   else if(key.code == "ArrowRight"){
-//     const photoTitleDom = document.getElementById('photoTitle');
-
-//     newLigthboxIndex += 1;
-//     if (newLigthboxIndex > newPhotographerPhotos.length - 1) {
-//       newLigthboxIndex = 0;
-//     }
-//     const src = newPhotographerPhotos[newLigthboxIndex];
-//     photoDom.innerHTML = `<img src="${src}" />`;
-    
-//     if (newPhotographerPhotos > photoName.length - 1){
-//       newPhotographerPhotos = 0;    
-//    }
-//     const srcTitle = photoTitle[newLigthboxIndex]; 
-//     photoTitleDom.innerHTML = `${srcTitle}`;
-//   }
-
-//   //ArrowLeft KEY
-//   else if(key.code == "ArrowLeft"){
-//     const photoTitleDom = document.getElementById('photoTitle');
-
-//     newPhotographerPhotos -= 1;
-//     if (newPhotographerPhotos < 0) {
-//       newPhotographerPhotos = newPhotographerPhotos.length - 1;
-//     }
-//     const src = newPhotographerPhotos[newLigthboxIndex];
-//     photoDom.innerHTML = `<img src="${src}" />`;
-
-//     if (newPhotographerPhotos < 0){
-//       newPhotographerPhotos = photoName.length - 1;
-//     }
-//     const srcTitle = photoTitle[newLigthboxIndex]; 
-//     photoTitleDom.innerHTML = `${srcTitle}`;
-//   }
-// });

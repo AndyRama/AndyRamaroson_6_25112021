@@ -244,7 +244,7 @@ input {
 /* cards-image NEW */
 .card-container {
   display: flex;
-  width: auto;
+  width: 1280px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
@@ -252,7 +252,7 @@ input {
 }
 
 .cards {
-  margin-left: 7rem;
+  margin-left: 5rem;
   display: flex;
   margin-bottom: 5rem;
   margin-top: 5rem;

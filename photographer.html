@@ -73,7 +73,15 @@
     </div>
 
     <!-- LIGHTBOX -->
-    <div class="lightBoxContainer"></div>
+    <div class="lightBoxContainer">
+      <div id="lightBoxBody">
+        <i class="fas fa-times X-close closeIcon" onclick="closeLightBox(this)"></i>
+        <div id="lightBox-img"></div>
+        <i class="fas fa-chevron-left leftIcon"  onclick="prevLightBox(this)"></i>
+        <i class="fas fa-chevron-right rightIcon"  onclick="nextLightBox(this)"></i>
+        <div id="photoTitle"></div>
+      </div>
+    </div>
   
     <script src="/scripts/factories/ProfileFactory.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
