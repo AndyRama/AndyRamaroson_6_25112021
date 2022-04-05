@@ -7,6 +7,9 @@ function displayLightBox(e){
   
   const lightBoxbody = document.getElementById('lightBoxBody');
   lightBoxbody.style.display = 'block';
+
+  //MISSING DISPLAY NEW IMAGE
+  //CONTROL PANEL
  
   const hidenPart = document.getElementById("myDropdown");
   hidenPart.classList.remove("show");
