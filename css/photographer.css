@@ -1,12 +1,13 @@
 #contact_modal {
   display: none;
-  transform: translateY(-157rem);
+  /* transform: translateY(-157rem); */
   height: 350vh;
   width: 100%;
   background-color: rgba(192, 189, 189, 0.5);
-  margin-top: -50px;
   padding-top: 50px;
-  /* position: fixed; */
+  position: fixed;
+  top: 0%;
+  left: 0%;
 }
 
 .photograph-header {
@@ -211,6 +212,10 @@ input {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 .fa-chevron-up{
   position: absolute;
   top: 1.5rem;
@@ -244,10 +249,10 @@ input {
 /* cards-image NEW */
 .card-container {
   display: flex;
-  width: 1280px;
+  /* width: 1280px; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
 }
 
@@ -268,7 +273,7 @@ input {
   height: 350px;
   width: 400px;
   border-radius: 5px;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 .card-content {
@@ -354,7 +359,6 @@ input {
   top: 2%;
   text-align: center;
   margin: 0 auto;
-  flex-grow:1 ;
 }
 
 .closeIcon{
@@ -388,6 +392,7 @@ input {
   width: 80vh;
   border-radius: 5px;
   margin-top: 2rem;
+  object-fit: cover;
 }
 
 .lightBoxCounter {
@@ -417,6 +422,8 @@ input {
   font-weight: bold;
 }
 
-.body {
-  background-color: #525252;
+.cardBox-vid {
+  height: 650px;
+  width: 800px;
+  border-radius: 5px;
 }

@@ -5,7 +5,6 @@ function profileFactories(photographeObject) {
   const pictureVideo = `assets/photos${video}`;
 
   let newArray = []; 
-  //let newPhotographerPhotos = [];
 
   function fillPagePhotographe() {    
     //Thumbs    
@@ -34,6 +33,8 @@ function profileFactories(photographeObject) {
 
     //Add likes
     function addLikes () {
+      actuLike = document.querySelector(".card-counter");
+            
       // Cible tous les coeur et ecoute les clicks      
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
@@ -70,7 +71,8 @@ function profileFactories(photographeObject) {
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
-      displayMedias(newArray);
+      displayMedias(newArray);      
+      //New text active
      
     } else if (index == 1) {
 
@@ -79,6 +81,7 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
+      //New text active
  
     } else if ( index == 2) {
 
@@ -90,8 +93,8 @@ function profileFactories(photographeObject) {
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
+      //New text active
     }  
-    // fillPagePhotographe(newArray);
   }));
 
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
@@ -125,8 +128,8 @@ function displayMedias(medias) {
       //return card video with model and panel controle
       const mediaCardVideo = `
         <div class="cards" >      
-          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="video"   onclick="displayLightBox('${media.title}','${photoToDisplay}','video','${media.id}')">
-            <video class ="card-video" alt="${media.title}"  src="./assets/photos/${photoToDisplay}"></video>
+          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="video" onclick="displayLightBox('${media.title}','${photoToDisplay}','video','${media.id}')">
+            <video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>
           </a>
           <div class="card-content">
             <h4 class="card-title">${media.title}</h4>              
@@ -139,12 +142,4 @@ function displayMedias(medias) {
       cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
     }
   })
-
 }
-
-// Btn Order
-
-  
-  
-
-

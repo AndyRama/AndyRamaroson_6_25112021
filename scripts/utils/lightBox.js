@@ -3,36 +3,53 @@ function displayLightBox(title, url, type,id){
   const lightBoxbody = document.getElementById('lightBoxBody');
   lightBoxbody.style.display = 'block';
 
-
   const photoTitle = document.getElementById('photoTitle');
   photoTitle.innerText = title;
 
 
   lightBoxbody.setAttribute("data-id", id);
   let containerImage = document.getElementById("lightBox-img");
+  const oldClass = document.getElementById("photoTitle");
 
   if(type == "image"){ 
-    containerImage.innerHTML = `<img src="./assets/photos/${url}" alt="${title}" class="cardBox-img">`
 
+    oldClass.style.display = "block";
+    oldClass.style.display = "photoTitle";
 
+    containerImage.innerHTML = `
+     <img src="./assets/photos/${url}" alt="${title}" class="cardBox-img">
+    `
   } else {
-    // video  
+    oldClass.style.display = "none";
 
+    containerImage.innerHTML = `
+     <video src="./assets/photos/${url}" class ="cardBox-vid" alt="${title}"  controls="controls"></video>
+     <div id="videoTitle">${title}</div>
+    `
   }
 
   const card = document.querySelector(`.card[data-id="${id}"]`);
-  const parent= card.parentNode;
-  const prevElement = parent.previousSibling;
+  const parent = card.parentNode;
+  const prevElement = parent.previousElementSibling;
+
   if(!prevElement) { 
-    //cacher fleche
+    //cacher fleche debut de tableau 
+    const hideLeftIcon = document.querySelector(".leftIcon");
+    hideLeftIcon.style.color = "white";
+  } else {
+    const hideLeftIcon = document.querySelector(".leftIcon");
+    hideLeftIcon.style.color = "#901C1C";
   }
-  const nextElement = parent.nextSibling;
+
+  const nextElement = parent.nextElementSibling;
   if(!nextElement) { 
-    //cacher fleche
+    //cacher fleche fin de tableau 
+    const hideRightIcon = document.querySelector(".rightIcon");
+    hideRightIcon.style.color = "white";
+  } else {
+    const hideRightIcon = document.querySelector(".rightIcon");
+    hideRightIcon.style.color = "#901C1C";
   }
- 
-  const hidenPart = document.getElementById("myDropdown");
-  hidenPart.classList.remove("show");
 }
 
 // close the lightbox
@@ -44,36 +61,34 @@ function closeLightBox(){
   })
 }
 
+// Previous Element 
 function prevLightBox(e) {
   const lightBoxbody = document.getElementById('lightBoxBody');
   const id = lightBoxbody.getAttribute("data-id"); 
   const card = document.querySelector(`.card[data-id="${id}"]`);
-  const parent= card.parentNode;
-  const prevElement = parent.previousSibling;
-  // console.log(prevElement);
-  const prevCard = prevElement.firstChild;
+  const parent = card.parentNode;
+  const prevElement = parent.previousElementSibling;
+
+  const prevCard = prevElement.firstElementChild;
   const url = prevCard.getAttribute("data-url");    
   const type = prevCard.getAttribute("data-type");  
   const idprev = prevCard.getAttribute("data-id"); 
   const title = prevCard.getAttribute("data-title"); 
-  displayLightBox(title,url,type,idprev);   
-  
-
+  displayLightBox(title,url,type,idprev);  
 }
-// next prev 
+
+// Next Element
 function nextLightBox(e) {
   const lightBoxbody = document.getElementById('lightBoxBody');
   const id = lightBoxbody.getAttribute("data-id"); 
   const card = document.querySelector(`.card[data-id="${id}"]`);
   const parent= card.parentNode;
-  const prevElement = parent.nextSibling;
-  // console.log(prevElement);
-  const prevCard = prevElement.firstChild;
-  const url = prevCard.getAttribute("data-url");    
-  const type = prevCard.getAttribute("data-type");  
-  const idprev = prevCard.getAttribute("data-id"); 
-  const title = prevCard.getAttribute("data-title"); 
-  displayLightBox(title,url,type,idprev);   
+  const nextElement = parent.nextElementSibling;
 
-  
+  const nextCard = nextElement.firstElementChild;
+  const url = nextCard.getAttribute("data-url");    
+  const type = nextCard.getAttribute("data-type");  
+  const idnext = nextCard.getAttribute("data-id"); 
+  const title = nextCard.getAttribute("data-title"); 
+  displayLightBox(title,url,type,idnext);     
 }
