@@ -14,14 +14,23 @@ const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$
 
 // launch modal event
 function displayModal() {
+  const body = document.querySelector("body");
   const modal = document.getElementById("contact_modal");
+
   modal.style.display = "block";
+  modal.classList.add('scroll');
+  body.classList.add('no-scroll');
+
 }
 
 //Close modal 
 function closeModal() {
   const modal = document.getElementById("contact_modal");
+  const body = document.querySelector("body");
+
   modal.style.display = "none";
+  body.classList.remove('no-scroll');
+  modal.classList.remove('scroll');
 }
 
 // Reset form error
@@ -38,7 +47,7 @@ const clearInput = () => {
   //remove error message
   const resetErrorMessage = document.querySelectorAll(".result")
   resetErrorMessage.forEach((message) => {
-    message.innerHTML = "";
+  message.innerHTML = "";
   });
 };
 

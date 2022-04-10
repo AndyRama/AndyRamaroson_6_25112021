@@ -5,6 +5,14 @@ body {
 	margin: 0;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
 header {
 	display: flex;
 	flex-direction: row;

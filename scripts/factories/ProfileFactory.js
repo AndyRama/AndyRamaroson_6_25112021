@@ -32,19 +32,21 @@ function profileFactories(photographeObject) {
 		photographeName.innerHTML = name;
 
     //Add likes
-    function addLikes () {
-      actuLike = document.querySelector(".card-counter");
-            
+    function addLikes (media) {
+      
       // Cible tous les coeur et ecoute les clicks      
       const heart = document.querySelectorAll(".heart");
       heart.forEach((icon) => {
         icon.addEventListener("click", () => {
           // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like          
           totalLike += 1;
+
           // Charge et affiche le nouveau chiffre dans "total"
           const nblikes = document.getElementById("nbLikes"); 
           nblikes.innerHTML = totalLike; 
-          const value = document.querySelector(".card-counter");    
+
+          actuLikes = document.querySelector(".card-counter");
+         
           // MISSING VALUE ACTU CARD LIKE NUMBER
 
         }, { once: true }) // N'autorise qu'un click
@@ -53,27 +55,26 @@ function profileFactories(photographeObject) {
 
     //display media video/image in profile
     let nbLike = 0;
+
     displayMedias(medias);
     medias.map(media => {
       nbLike += media.likes;    
     })      
-  let totalLike = nbLike;
-  document.getElementById("nbLikes").innerText = nbLike;
-  addLikes();  
+    let totalLike = nbLike;
+    document.getElementById("nbLikes").innerText = nbLike;
+    addLikes();  
   }
-
-  const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));
-  btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {
-    
+  
+  const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));  
+  btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {    
     if( index == 0) { 
 
       // sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
-      displayMedias(newArray);      
-      //New text active
-     
+      displayMedias(newArray);   
+
     } else if (index == 1) {
 
       // sort by DATE 
@@ -81,7 +82,6 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      //New text active
  
     } else if ( index == 2) {
 
@@ -93,8 +93,25 @@ function profileFactories(photographeObject) {
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      //New text active
+
     }  
+    //DropDown comportement after select option
+    // const hidenPart = document.getElementById("myDropdown");
+    // const chevronUpIcon = document.getElementById("close-up-icon");
+    // const chevronDownIcon = document.getElementById('drop-down-btn');
+    
+    // hidenPart.classList.add("show");
+    // chevronUpIcon.classList.add("fa-chevron-up-none");
+    // chevronDownIcon.classList.toggle("fa-chevron-up-none");
+
+    //AFFICHAGE ACTIF 
+    const text1 = document.getElementById('text1').textContent;
+    const text2 = document.getElementById('text2').textContent;
+    const text3 = document.getElementById('text3').textContent;
+ 
+    console.log(text1);
+    console.log(text2);
+    console.log(text3);
   }));
 
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
@@ -125,7 +142,7 @@ function displayMedias(medias) {
       cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
     } else {
       photoToDisplay = media.video;
-      //return card video with model and panel controle
+      //return card video with model and video bar controle
       const mediaCardVideo = `
         <div class="cards" >      
           <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="video" onclick="displayLightBox('${media.title}','${photoToDisplay}','video','${media.id}')">
@@ -143,3 +160,36 @@ function displayMedias(medias) {
     }
   })
 }
+
+//LightBox with keyboard
+const LightBoxContent = document.getElementById("lightBoxBody");
+const bg = document.getElementById('lightBg');
+
+document.addEventListener('keydown', (key) => {
+  //ENTER KEY
+  if(key.code == "Enter"){
+    LightBoxContent.style.display = "block";
+    bg.style.display = 'block';
+  }
+  
+  //ESC KEY
+  else if(key.code == "Escape") {
+    LightBoxContent.style.display = "none";    
+    bg.style.display = 'none';
+  }
+
+  //LEFT KEY
+  else if(key.code == "ArrowLeft"){
+    const btnLeft = document.querySelector(".leftIcon");
+    //Simule un event 'clic'
+    btnLeft.click();
+  }
+
+  //RIGHT KEY
+  else if(key.code == "ArrowRight"){
+    const btnRight = document.querySelector(".rightIcon");
+    //Simule un event 'clic'
+    btnRight.click();
+  }
+})
+

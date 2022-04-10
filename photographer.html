@@ -30,11 +30,11 @@
       <span class="trier-par-txt">Trier par</span>
       <div class="dropdown">
         <i class="fas fa-chevron-down" id="drop-down-btn"></i>
-        <button  class="dropbtn trierBtn" id="text">Popularité</button>
+        <button  class="dropbtn trierBtn" id="text1">Popularité</button>
         <i class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></i>
         <div id="myDropdown" class="dropdown-content">
-          <a href="javascript:void(0)" class="trierBtn">Date</a>
-          <a href="javascript:void(0)" class="trierBtn">Titre</a>
+          <a href="javascript:void(0)" id="text2" class="trierBtn">Date</a>
+          <a href="javascript:void(0)" id="text3" class="trierBtn">Titre</a>
         </div>
       </div>
 
@@ -73,13 +73,15 @@
     </div>
 
     <!-- LIGHTBOX -->
-    <div class="lightBoxContainer">
-      <div id="lightBoxBody">
-        <i class="fas fa-times X-close closeIcon" onclick="closeLightBox(this)"></i>
-        <div id="lightBox-img"></div>
-        <i class="fas fa-chevron-left leftIcon"  onclick="prevLightBox(this)"></i>
-        <i class="fas fa-chevron-right rightIcon"  onclick="nextLightBox(this)"></i>
-        <div id="photoTitle"></div>
+    <div id="lightBg">
+      <div class="lightBoxContainer">
+        <div id="lightBoxBody">
+          <i class="fas fa-times X-close closeIcon" onclick="closeLightBox(this)"></i>
+          <div id="lightBox-img"></div>
+          <i class="fas fa-chevron-left leftIcon"  onclick="prevLightBox(this)"></i>
+          <i class="fas fa-chevron-right rightIcon"  onclick="nextLightBox(this)"></i>
+          <div id="photoTitle"></div>
+        </div>
       </div>
     </div>
   

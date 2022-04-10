@@ -1,7 +1,12 @@
 // Open the lightbox
 function displayLightBox(title, url, type,id){
   const lightBoxbody = document.getElementById('lightBoxBody');
+  const bg = document.getElementById('lightBg');
+  const body = document.querySelector('body');
+  
   lightBoxbody.style.display = 'block';
+  bg.style.display = 'block';
+  body.classList.add('no-scroll');
 
   const photoTitle = document.getElementById('photoTitle');
   photoTitle.innerText = title;
@@ -31,6 +36,7 @@ function displayLightBox(title, url, type,id){
   const card = document.querySelector(`.card[data-id="${id}"]`);
   const parent = card.parentNode;
   const prevElement = parent.previousElementSibling;
+  const nextElement = parent.nextElementSibling;
 
   if(!prevElement) { 
     //cacher fleche debut de tableau 
@@ -41,7 +47,6 @@ function displayLightBox(title, url, type,id){
     hideLeftIcon.style.color = "#901C1C";
   }
 
-  const nextElement = parent.nextElementSibling;
   if(!nextElement) { 
     //cacher fleche fin de tableau 
     const hideRightIcon = document.querySelector(".rightIcon");
@@ -55,9 +60,14 @@ function displayLightBox(title, url, type,id){
 // close the lightbox
 function closeLightBox(){
   const closeLightBoxBtn = document.querySelector('.closeIcon');
+  const body = document.querySelector('body');
+  const bg = document.getElementById('lightBg');
+  const lightBoxbody = document.getElementById('lightBoxBody');
+
   closeLightBoxBtn.addEventListener('click', () => {
-    const lightBoxbody = document.getElementById('lightBoxBody');
     lightBoxbody.style.display = 'none';
+    body.classList.remove('no-scroll'); //Réactive le défilement vertical
+    bg.style.display = 'none';//display background
   })
 }
 
