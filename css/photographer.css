@@ -319,6 +319,11 @@ input {
   color:#901C1C;
 }
 
+.card-likeB {
+  margin-left: 5px;
+  color:black;
+}
+
 /* element float in the page down rigth */
 .price_badge {
   width: 300px;

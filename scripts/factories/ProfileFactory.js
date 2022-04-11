@@ -73,6 +73,7 @@ function profileFactories(photographeObject) {
       const text2 = document.getElementById('text2');
       const text3 = document.getElementById('text3');
       const text1 = document.getElementById('text1');
+
       // sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
@@ -112,6 +113,7 @@ function profileFactories(photographeObject) {
       if(a.title.toLowerCase() < b.title.toLowerCase()) { return -1;}
       else if (a.title.toLowerCase() > b.title.toLowerCase()) {return 1;}
       })
+
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
@@ -124,7 +126,6 @@ function profileFactories(photographeObject) {
       text1.innerText = "Titre";
       text2.innerText = "Date";
       text3.innerText = "Popularité";
-
     }  
   }));
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
