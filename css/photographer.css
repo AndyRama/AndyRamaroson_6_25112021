@@ -30,7 +30,8 @@
   justify-content: space-between;
   padding: 35px;
   margin: auto;
-  overflow: hidden;
+  overflow: auto;
+  max-height: 80vh;
 }
 
 /* background Modal */

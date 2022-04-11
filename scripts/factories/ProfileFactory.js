@@ -29,39 +29,16 @@ function profileFactories(photographeObject) {
 
     //FullName in modalContact
     const photographeName = document.getElementById("fullName");
-		photographeName.innerHTML = name;
-
-    //Add likes
-    function addLikes () {
-      
-      // Cible tous les coeur et ecoute les clicks      
-      const heart = document.querySelectorAll(".heart");
-      heart.forEach((icon) => {
-        icon.addEventListener("click", () => {
-          // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like          
-          totalLike += 1;
-          // Charge et affiche le nouveau chiffre dans "total"
-          const nblikes = document.getElementById("nbLikes"); 
-          nblikes.innerHTML = totalLike; 
-
-          actuLikes = document.querySelector(".card-counter");
-         
-          // MISSING VALUE ACTU CARD LIKE NUMBER
-
-        }, { once: true }) // N'autorise qu'un click
-      })
-    }
+		photographeName.innerHTML = name;   
 
     //display media video/image in profile
     let nbLike = 0;
 
-    displayMedias(medias);
+    displayMedias(medias); 
     medias.map(media => {
       nbLike += media.likes;    
-    })      
-    let totalLike = nbLike;
-    document.getElementById("nbLikes").innerText = nbLike;
-    addLikes();  
+    })          
+    document.getElementById("nbLikes").innerText = nbLike;   
   }
   
   const closeDrop = document.getElementById('drop-down-btn');
@@ -135,44 +112,35 @@ function displayMedias(medias) {
   medias.map(media => {
   const cardContainer = document.querySelector('.card-container');
   let photoToDisplay;
+  let elementToDisplay;
+  let type;
 
     if(media.image){ 
       photoToDisplay = media.image; 
+      type = "image";
+      elementToDisplay = `<img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">`;
+    } else{
+      type= "video";
+      photoToDisplay = media.video; 
+      elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
 
+    }
       //return card image with model
       const mediaCardImage = `
           <div class="cards" >      
-            <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="image" onclick="displayLightBox('${media.title}','${photoToDisplay}','image','${media.id}')">
-              <img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">
+            <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
+              ${elementToDisplay}
             </a>
             <div class="card-content">
               <h4 class="card-title">${media.title}</h4>              
               <div class="card_btn">
-                <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
+                <span onclick="incrementLike(this)" class="card-counter"><span>${media.likes}</span><i class="card-like heart fas fa-heart"></i></span>
               </div>
             </div>
           </div>
         `
       cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
-    } else {
-      photoToDisplay = media.video;
-      //return card video with model and video bar controle
-      const mediaCardVideo = `
-        <div class="cards" >      
-          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="video" onclick="displayLightBox('${media.title}','${photoToDisplay}','video','${media.id}')">
-            <video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>
-          </a>
-          <div class="card-content">
-            <h4 class="card-title">${media.title}</h4>              
-            <div class="card_btn">
-              <span class="card-counter">${media.likes}<i class="card-like heart fas fa-heart"></i></span>
-            </div>
-          </div>
-        </div>
-      `
-      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardVideo;
-    }
-  })
+   })
 }
 
 //LightBox with keyboard
@@ -209,3 +177,9 @@ document.addEventListener('keydown', (key) => {
   }
 })
 
+
+ //Add likes  
+function incrementLike(e) {
+  e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
+  document.getElementById("nbLikes").innerText = parseInt(document.getElementById("nbLikes").innerText)+1;
+}
