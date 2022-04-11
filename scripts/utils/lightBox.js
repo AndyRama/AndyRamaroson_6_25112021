@@ -28,7 +28,7 @@ function displayLightBox(title, url, type,id){
     oldClass.style.display = "none";
 
     containerImage.innerHTML = `
-     <video src="./assets/photos/${url}" class ="cardBox-vid" alt="${title}"  controls="controls"></video>
+     <video src="./assets/photos/${url}" class ="cardBox-vid" alt="${title}" controls="controls"></video>
      <div id="videoTitle">${title}</div>
     `
   }

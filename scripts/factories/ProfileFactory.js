@@ -32,7 +32,7 @@ function profileFactories(photographeObject) {
 		photographeName.innerHTML = name;
 
     //Add likes
-    function addLikes (media) {
+    function addLikes () {
       
       // Cible tous les coeur et ecoute les clicks      
       const heart = document.querySelectorAll(".heart");
@@ -40,7 +40,6 @@ function profileFactories(photographeObject) {
         icon.addEventListener("click", () => {
           // A chaque click, on ajoute un +1 au chiffre de like et aux nb total de like          
           totalLike += 1;
-
           // Charge et affiche le nouveau chiffre dans "total"
           const nblikes = document.getElementById("nbLikes"); 
           nblikes.innerHTML = totalLike; 
@@ -65,15 +64,29 @@ function profileFactories(photographeObject) {
     addLikes();  
   }
   
+  const closeDrop = document.getElementById('drop-down-btn');
   const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));  
+  
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {    
     if( index == 0) { 
-
+      
+      const text2 = document.getElementById('text2');
+      const text3 = document.getElementById('text3');
+      const text1 = document.getElementById('text1');
       // sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);   
+      console.log(newArray);
+      
+      hidenPart.classList.remove("show");
+      chevronUpIcon.classList.add("fa-chevron-up-none");
+      chevronDownIcon.classList.toggle("fa-chevron-up-none");
+
+      text1.innerText = "Popularité";
+      text2.innerText = "Date";
+      text3.innerText = "Titre";
 
     } else if (index == 1) {
 
@@ -82,6 +95,15 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
+      console.log(newArray);
+
+      hidenPart.classList.remove("show");
+      chevronUpIcon.classList.add("fa-chevron-up-none");
+      chevronDownIcon.classList.toggle("fa-chevron-up-none");
+
+      text1.innerText = "Date";
+      text2.innerText = "Popularité";
+      text3.innerText = "Titre";
  
     } else if ( index == 2) {
 
@@ -93,27 +115,18 @@ function profileFactories(photographeObject) {
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
+      console.log(newArray);
+
+      hidenPart.classList.remove("show");
+      chevronUpIcon.classList.add("fa-chevron-up-none");
+      chevronDownIcon.classList.toggle("fa-chevron-up-none");
+
+      text1.innerText = "Titre";
+      text2.innerText = "Date";
+      text3.innerText = "Popularité";
 
     }  
-    //DropDown comportement after select option
-    // const hidenPart = document.getElementById("myDropdown");
-    // const chevronUpIcon = document.getElementById("close-up-icon");
-    // const chevronDownIcon = document.getElementById('drop-down-btn');
-    
-    // hidenPart.classList.add("show");
-    // chevronUpIcon.classList.add("fa-chevron-up-none");
-    // chevronDownIcon.classList.toggle("fa-chevron-up-none");
-
-    //AFFICHAGE ACTIF 
-    const text1 = document.getElementById('text1').textContent;
-    const text2 = document.getElementById('text2').textContent;
-    const text3 = document.getElementById('text3').textContent;
- 
-    console.log(text1);
-    console.log(text2);
-    console.log(text3);
   }));
-
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
 }
 
@@ -164,6 +177,7 @@ function displayMedias(medias) {
 //LightBox with keyboard
 const LightBoxContent = document.getElementById("lightBoxBody");
 const bg = document.getElementById('lightBg');
+const body = document.querySelector('body');
 
 document.addEventListener('keydown', (key) => {
   //ENTER KEY
@@ -176,6 +190,7 @@ document.addEventListener('keydown', (key) => {
   else if(key.code == "Escape") {
     LightBoxContent.style.display = "none";    
     bg.style.display = 'none';
+    body.classList.remove('no-scroll');
   }
 
   //LEFT KEY

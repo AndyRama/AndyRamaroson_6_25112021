@@ -8,6 +8,7 @@ const mail = document.getElementById("email");
 const formField= document.getElementById("form-field");
 const mess = document.getElementById("message");
 
+
 //Check patern Email
 const emailError = document.getElementById("emailError");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
@@ -170,10 +171,10 @@ formField.addEventListener("submit", (event) => {
     validationMessage() == true
   ) {
     //value input in the console
-    // console.log(firstName.value);
-    // console.log(lastName.value);
-    // console.log(mail.value);
-    // console.log(message.value);
+    console.log(firstName.value);
+    console.log(lastName.value);
+    console.log(mail.value);
+    console.log(message.value);
 
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");
