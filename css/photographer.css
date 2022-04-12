@@ -153,6 +153,7 @@ input {
 	width: 200px;
 	border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0px 2px 5px 0px grey;
 }
 
 #label_trier {
@@ -252,8 +253,6 @@ input {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;;
   align-content: center;
-  /* align-items: center; */
-  /* width: 1280px; */
 }
 
 .cards {
@@ -274,10 +273,14 @@ input {
   width: 400px;
   border-radius: 5px;
   /* object-fit: cover; */
+  box-shadow: 0px 2px 5px 0px darkgrey;
+}
+
+.card-img:hover {
+  transform: scale(1.1);
 }
 
 .card-content {
-  /* display: flex; */
   height: 30px;
   position: relative;
   font-size: 24px;
@@ -286,7 +289,7 @@ input {
 
 .card-title {
   position: relative;
-  top: -80%;
+  top: -50%;
   left: -25rem;
   color:#901C1C;
   width: 350px;
@@ -294,8 +297,7 @@ input {
 
 .card-counter {
   position: absolute;
-  top: 22%;
-  /* right: 0; */
+  top: 60%;
   color:#901C1C;
   left: -3.5rem;
 }
@@ -304,7 +306,13 @@ input {
   height: 350px;
   width: 400px;
   border-radius: 5px;
+  cursor: pointer;
 }
+
+.card-video:hover {
+  transform: scale(1.2);
+}
+
 .card-video-light{
   width: 90%;
   height:95%;
@@ -318,8 +326,12 @@ input {
 .card-like {
   margin-left: 5px;
   color:#901C1C;
+  cursor: pointer;
 }
 
+.card-like:hover {
+  transform: scale(1.3);
+}
 .card-likeB {
   margin-left: 5px;
   color:black;
@@ -408,6 +420,7 @@ input {
   width: 80vh;
   border-radius: 5px;
   margin-top: 4rem;
+  box-shadow: 3px 0px 10px 0px darkgrey;
 }
 
 .lightBoxCounter {
@@ -438,7 +451,10 @@ input {
 }
 
 .cardBox-vid {
-  height: 635px;
-  width: 675px;
+  width: 800px;
   border-radius: 5px;
+  position: fixed;
+  top: 9rem;
+  left: 7rem;
+  box-shadow: 3px 0px 10px 0px darkgrey;
 }

@@ -41,9 +41,8 @@ function profileFactories(photographeObject) {
     document.getElementById("nbLikes").innerText = nbLike;   
   }
   
-  const closeDrop = document.getElementById('drop-down-btn');
-  const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));  
-  
+  // const closeDrop = document.getElementById('drop-down-btn');
+  const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));    
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {    
     if( index == 0) { 
       
@@ -56,7 +55,7 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);   
-      console.log(newArray);
+      // console.log(newArray);
       
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -73,7 +72,7 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      console.log(newArray);
+      // console.log(newArray);
 
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -94,7 +93,7 @@ function profileFactories(photographeObject) {
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      console.log(newArray);
+      // console.log(newArray);
 
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -119,26 +118,25 @@ function displayMedias(medias) {
       photoToDisplay = media.image; 
       type = "image";
       elementToDisplay = `<img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">`;
-    } else{
+    } else {
       type= "video";
       photoToDisplay = media.video; 
       elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
-
     }
-      //return card image with model
-      const mediaCardImage = `
-          <div class="cards" >      
-            <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
-              ${elementToDisplay}
-            </a>
-            <div class="card-content">
-              <h4 class="card-title">${media.title}</h4>              
-              <div class="card_btn">
-                <span onclick="incrementLike(this)" class="card-counter"><span>${media.likes}</span><i class="card-like heart fas fa-heart"></i></span>
-              </div>
+    //return card image with model
+    const mediaCardImage = `
+        <div class="cards" >      
+          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
+            ${elementToDisplay}
+          </a>
+          <div class="card-content">
+            <h4 class="card-title">${media.title}</h4>              
+            <div class="card_btn">
+              <span onclick="incrementLike(this)" class="card-counter"><span>${media.likes}</span><i class="card-like heart fas fa-heart"></i></span>
             </div>
           </div>
-        `
+        </div>
+      `
       cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
    })
 }
@@ -151,8 +149,8 @@ const body = document.querySelector('body');
 document.addEventListener('keydown', (key) => {
   //ENTER KEY
   if(key.code == "Enter"){
-    LightBoxContent.style.display = "block";
-    bg.style.display = 'block';
+      // LightBoxContent.style.display = "block";
+      // bg.style.display = 'block';
   }
   
   //ESC KEY
@@ -177,8 +175,7 @@ document.addEventListener('keydown', (key) => {
   }
 })
 
-
- //Add likes  
+//Add likes  
 function incrementLike(e) {
   e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
   document.getElementById("nbLikes").innerText = parseInt(document.getElementById("nbLikes").innerText)+1;
