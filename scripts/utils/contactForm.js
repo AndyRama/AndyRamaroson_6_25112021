@@ -178,7 +178,12 @@ formField.addEventListener("submit", (event) => {
 
     //If everything is good, we remove the form 
     const modal = document.getElementById("contact_modal");
+    const body = document.querySelector("body");
+
     modal.style.display = "none";
+    //restaure scroll body after submit
+    body.classList.remove('no-scroll');
+    modal.classList.remove('scroll');
     clearInput()
   } else {
     return false;
