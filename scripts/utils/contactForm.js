@@ -36,7 +36,6 @@ function closeModal() {
 
 // Reset form error
 const clearInput = () => {
-  //remove input field
   form.reset();
 
   //remove error form
@@ -87,9 +86,6 @@ function validationLast () {
   lastError.classList.remove("errorStyle");
   lastName.classList.remove("errorForm");
 
-  //Every time the user types something
-  //We check the validity of the first name field
-  //If nothing is written or if there are only spaces
   if (lastName.value.trim().length == 0) {
     lastError.innerHTML = "Veuillez saisir votre nom.";//add message
     lastError.classList.add("errorStyle");//add a class to the error message
@@ -114,13 +110,13 @@ function validationEmail() {
   emailError.classList.remove('errorStyle');
   mail.classList.remove('errorForm');
 
-//Email Blank
-if (mail.value == "") {
-  emailError.innerHTML = 'Veuillez saisir une adresse email.';
-  emailError.classList.add('errorStyle');
-  mail.classList.add('errorForm');
-  return false;
-  //Email validate
+  //Email Blank
+  if (mail.value == "") {
+    emailError.innerHTML = 'Veuillez saisir une adresse email.';
+    emailError.classList.add('errorStyle');
+    mail.classList.add('errorForm');
+    return false;
+    //Email validate
   } else if (!mail.value.match(mailRegex)) {
     emailError.innerHTML = 'Adresse email invalide.';
     emailError.classList.add('errorStyle')
@@ -184,6 +180,7 @@ formField.addEventListener("submit", (event) => {
     //restaure scroll body after submit
     body.classList.remove('no-scroll');
     modal.classList.remove('scroll');
+    //reset form
     clearInput()
   } else {
     return false;

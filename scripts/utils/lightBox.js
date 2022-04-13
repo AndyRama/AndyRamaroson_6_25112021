@@ -39,7 +39,7 @@ function displayLightBox(title, url, type,id){
   const nextElement = parent.nextElementSibling;
 
   if(!prevElement) { 
-    //cacher fleche debut de tableau 
+    //hidden arrow left
     const hideLeftIcon = document.querySelector(".leftIcon");
     hideLeftIcon.style.color = "white";
   } else {
@@ -48,7 +48,7 @@ function displayLightBox(title, url, type,id){
   }
 
   if(!nextElement) { 
-    //cacher fleche fin de tableau 
+    //hidden arrow right
     const hideRightIcon = document.querySelector(".rightIcon");
     hideRightIcon.style.color = "white";
   } else {
@@ -57,7 +57,7 @@ function displayLightBox(title, url, type,id){
   }
 }
 
-// close the lightbox
+// Close the lightbox
 function closeLightBox(){
   const closeLightBoxBtn = document.querySelector('.closeIcon');
   const body = document.querySelector('body');

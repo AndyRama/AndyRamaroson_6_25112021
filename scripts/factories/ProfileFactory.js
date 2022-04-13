@@ -41,7 +41,6 @@ function profileFactories(photographeObject) {
     document.getElementById("nbLikes").innerText = nbLike;   
   }
   
-  // const closeDrop = document.getElementById('drop-down-btn');
   const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));    
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {    
     if( index == 0) { 
@@ -55,7 +54,6 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);   
-      // console.log(newArray);
       
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -72,7 +70,6 @@ function profileFactories(photographeObject) {
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      // console.log(newArray);
 
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -93,7 +90,6 @@ function profileFactories(photographeObject) {
       //supression des cards presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
-      // console.log(newArray);
 
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
@@ -149,8 +145,7 @@ const body = document.querySelector('body');
 document.addEventListener('keydown', (key) => {
   //ENTER KEY
   if(key.code == "Enter"){
-      // LightBoxContent.style.display = "block";
-      // bg.style.display = 'block';
+
   }
   
   //ESC KEY
@@ -163,14 +158,12 @@ document.addEventListener('keydown', (key) => {
   //LEFT KEY
   else if(key.code == "ArrowLeft"){
     const btnLeft = document.querySelector(".leftIcon");
-    //Simule un event 'clic'
     btnLeft.click();
   }
 
   //RIGHT KEY
   else if(key.code == "ArrowRight"){
     const btnRight = document.querySelector(".rightIcon");
-    //Simule un event 'clic'
     btnRight.click();
   }
 })

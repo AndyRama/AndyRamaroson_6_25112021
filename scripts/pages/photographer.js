@@ -8,14 +8,12 @@ async function getPhotographerById() {
 	await fetch("./photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
-    // console.log(photographers);
-
+    
     let photographeObject = photographers.find(photographe => photographe.id == id)
 
     await fetch("./photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (medias = data.media))
-    // console.log(medias);
 
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray;
@@ -30,7 +28,7 @@ async function displayDataPhotograph(photographer) {
 };
 
 async function init() {
-	// Récupère les datas des photographes
+	// Get datas of all photographers
 	const { photographer } = await getPhotographerById();
 	displayDataPhotograph(photographer);
 };
