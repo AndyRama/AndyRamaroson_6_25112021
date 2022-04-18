@@ -119,6 +119,14 @@ function displayMedias(medias) {
       photoToDisplay = media.video; 
       elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
     }
+   
+    // cookies timestamp for one clic
+    let mediaLike = media.likes;
+    let cookie = localStorage.getItem(media.id);
+    if( cookie != null) {
+      mediaLike++
+    }
+    
     //return card image with model
     const mediaCardImage = `
         <div class="cards" >      
@@ -128,7 +136,7 @@ function displayMedias(medias) {
           <div class="card-content">
             <h4 class="card-title">${media.title}</h4>              
             <div class="card_btn">
-              <span onclick="incrementLike(this)" class="card-counter"><span>${media.likes}</span><i class="card-like heart fas fa-heart"></i></span>
+              <span id="${media.id}" onclick="incrementLike(this)" class="card-counter"><span>${mediaLike}</span><i class="card-like heart fas fa-heart"></i></span>
             </div>
           </div>
         </div>
@@ -170,6 +178,12 @@ document.addEventListener('keydown', (key) => {
 
 //Add likes  
 function incrementLike(e) {
-  e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
-  document.getElementById("nbLikes").innerText = parseInt(document.getElementById("nbLikes").innerText)+1;
+  const id = e.id;
+  const cookie = localStorage.getItem(id);
+
+  if(cookie == null) {
+    e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
+    document.getElementById("nbLikes").innerText = parseInt(document.getElementById("nbLikes").innerText)+1;
+    localStorage.setItem(id,"click");
+  }
 }
