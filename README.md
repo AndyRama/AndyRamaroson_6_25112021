@@ -4,8 +4,6 @@ https://andyrama.github.io/AndyRamaroson_6_25112021/
 
 Create an accessible site for a platform of photographers.
 
-Base de code du projet P6 - Parcours Front-end
-
 <h3>Features HomePage</h3>
 <ul>
   <li>Listed all photographers.</li>
@@ -46,6 +44,6 @@ Base de code du projet P6 - Parcours Front-end
   <li>Approved mockups on figma.</li>
   <li>Only the desktop model has been provided.</li>
   <li>The code is separated into different files (HTML, CSS, JavaScript).</li>
-  <li>Use Json data</li>
+  <li>Use Json data.</li>
   <li>Deploy application.</li>
 </ul>
