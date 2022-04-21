@@ -1,17 +1,16 @@
-## FishEye
+# FishEye
 
-# AndyRamaroson_6_25112021
 Base de code du projet P6 - Parcours Front-end
 
 https://andyrama.github.io/AndyRamaroson_6_25112021/
 
 <h2> FishEye </h2>
-Créez un site accessible pour une plateforme de photographes.
+Create an accessible site for a platform of photographers.
 
 <h3>Features Home Page</h3>
 <ul>
   <li>Listed all photographers.</li>
-  <li>List of all photographers with their name, slogan, location, their price/time and a thumbnail image of their choice.</li>
+  <li>List of all photographers with their name, slogan, location and a thumbnail image of their choice.</li>
   <li>When the user clicks on the thumbnail of a photographer, it is brought to his page.</li>
 </ul>
 
