@@ -1,19 +1,19 @@
 # FishEye
 
-Create an accessible site for a platform of photographers.
-
 https://andyrama.github.io/AndyRamaroson_6_25112021/
+
+Create an accessible site for a platform of photographers.
 
 Base de code du projet P6 - Parcours Front-end
 
-<h3>Features Home Page</h3>
+<h3>Features HomePage</h3>
 <ul>
   <li>Listed all photographers.</li>
   <li>List of all photographers with their name, slogan, location and a thumbnail image of their choice.</li>
   <li>When the user clicks on the thumbnail of a photographer, it is brought to his page.</li>
 </ul>
 
-<h3>Features Profile Page</h3>
+<h3>Features ProfilePage</h3>
 <ul>
   <li>Displays a gallery of the photographer's work.</li>
   <li>Photographers can show both photos and videos.</li>
@@ -41,10 +41,11 @@ Base de code du projet P6 - Parcours Front-end
   <li>Display the content of three fields in the console logs.</li>
 </ul>
 
-<h3>Technical constraints v1</h3>
+<h3>Technical constraints</h3>
 <ul>
   <li>Approved mockups on figma.</li>
   <li>Only the desktop model has been provided.</li>
   <li>The code is separated into different files (HTML, CSS, JavaScript).</li>
+  <li>Use Json data</li>
   <li>Deploy application.</li>
 </ul>
