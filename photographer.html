@@ -9,12 +9,14 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+
     <!-- Header -->
     <header>
       <a href="./index.html" alt="Fisheye Home page">
         <img src="assets/images/logo.png" class="logo" width="210" height="60" alt="logo"/>
       </a>
     </header>
+
     <!-- Presentation container -->
     <main id="main">
       <div class="container">
@@ -25,9 +27,10 @@
             <p class="slogan"></p>
           </div>
           <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
-          <img src="" id="thumbs" alt="" >
+          <img src="" id="thumbs" alt="profile du photographe" >
         </div>
       </div>
+
       <!-- filter -->
       <span class="trier-par-txt">Trier par</span>
       <div class="dropdown">
@@ -39,11 +42,14 @@
           <a href="javascript:void(0)" id="text3" class="trierBtn">Titre</a>
         </div>
       </div>
-      <!-- gallery container -->
+
+      <!-- Gallery container -->
       <div class="card-container"></div>  
-     
+
+     <!-- Counter likes and price -->
       <span class="price_badge"><span id="nbLikes"></span><i class="card-likeB fas fa-heart"></i><div id="price"></div></span>
     </main>
+
     <!-- Modal contact Form -->
     <div id="contact_modal">
       <div class="modal">
@@ -75,7 +81,7 @@
       </div>
     </div>
 
-    <!-- LIGHTBOX -->
+    <!-- LightBox -->
     <div id="lightBg">
       <div class="lightBoxContainer">
         <div id="lightBoxBody">

@@ -139,7 +139,7 @@ h1.title {
 .photographer_section article h2 {
 	color: #D3573C;
 	font-size: 36px;
-	margin-top: 0;
+	margin-top: 10px;
 	margin-bottom: 0;
 }
 
@@ -169,8 +169,8 @@ h1.title {
 	width: 200px;
 	border-radius: 50%;
 	object-fit: cover;
-	box-shadow: 0px 2px 5px 0px #D3573C;
 	cursor: pointer;
+	box-shadow: 0px 2px 5px 0px grey !important;
 }
 
 .photographer_section article img:hover {

@@ -39,7 +39,7 @@ Create an accessible site for a platform of photographers.
   <li>Display the content of three fields in the console logs.</li>
 </ul>
 
-<h3>Technical constraints</h3>
+<h3>Technical contraints</h3>
 <ul>
   <li>Approved mockups on figma.</li>
   <li>Only the desktop model has been provided.</li>
