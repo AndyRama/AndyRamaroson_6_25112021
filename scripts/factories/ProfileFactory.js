@@ -49,7 +49,7 @@ function profileFactories(photographeObject) {
       const text3 = document.getElementById('text3');
       const text1 = document.getElementById('text1');
 
-      // sort by POPULARITY   
+      //sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
@@ -75,6 +75,7 @@ function profileFactories(photographeObject) {
       chevronUpIcon.classList.add("fa-chevron-up-none");
       chevronDownIcon.classList.toggle("fa-chevron-up-none");
 
+      //Dynamic text content
       text1.innerText = "Date";
       text2.innerText = "Popularité";
       text3.innerText = "Titre";
@@ -110,39 +111,39 @@ function displayMedias(medias) {
   let elementToDisplay;
   let type;
 
-    if(media.image){ 
-      photoToDisplay = media.image; 
-      type = "image";
-      elementToDisplay = `<img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">`;
-    } else {
-      type= "video";
-      photoToDisplay = media.video; 
-      elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
-    }
-   
-    // cookies timestamp for one clic
-    let mediaLike = media.likes;
-    let cookie = localStorage.getItem(media.id);
-    if( cookie != null) {
-      mediaLike++
-    }
-    
-    //return card image with model
-    const mediaCardImage = `
-        <div class="cards" >      
-          <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
-            ${elementToDisplay}
-          </a>
-          <div class="card-content">
-            <h4 class="card-title">${media.title}</h4>              
-            <div class="card_btn">
-              <span id="${media.id}" onclick="incrementLike(this)" class="card-counter"><span>${mediaLike}</span><i class="card-like heart fas fa-heart"></i></span>
-            </div>
-          </div>
+  if(media.image){ 
+    photoToDisplay = media.image; 
+    type = "image";
+    elementToDisplay = `<img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">`;
+  } else {
+    type= "video";
+    photoToDisplay = media.video; 
+    elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
+  }
+  
+  // cookies timestamp for one clic
+  let mediaLike = media.likes;
+  let cookie = localStorage.getItem(media.id);
+  if( cookie != null) {
+    mediaLike++
+  }
+  
+  //return card image with model
+  const mediaCardImage = `
+    <div class="cards" >      
+      <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
+        ${elementToDisplay}
+      </a>
+      <div class="card-content">
+        <h4 class="card-title">${media.title}</h4>              
+        <div class="card_btn">
+          <span id="${media.id}" onclick="incrementLike(this)" class="card-counter"><span>${mediaLike}</span><i class="card-like heart fas fa-heart"></i></span>
         </div>
-      `
-      cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
-   })
+      </div>
+    </div>
+    `
+    cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
+  })
 }
 
 //LightBox with keyboard
@@ -153,7 +154,6 @@ const body = document.querySelector('body');
 document.addEventListener('keydown', (key) => {
   //ENTER KEY
   if(key.code == "Enter"){
-
   }
   
   //ESC KEY
