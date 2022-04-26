@@ -462,7 +462,6 @@ input {
 .cardBox-vid {
   width: 800px;
   border-radius: 5px;
-  margin-top: 15rem;
-  margin-left: 5rem !important;
+  margin-top: 8rem;
   box-shadow: 3px 0px 10px 0px darkgrey;
 }
