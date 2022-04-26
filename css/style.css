@@ -2,7 +2,19 @@
 
 body {
 	font-family: "DM Sans", sans-serif;
-	margin: 0;
+	margin: 0 auto;
+}
+
+.mainContainer {
+	max-width: 97%;
+	margin: auto;
+	padding: 0 20px;
+}
+
+.Container {
+	max-width: 97%;
+	margin: auto;
+	padding: 0 20px;
 }
 
 .no-scroll {
@@ -19,14 +31,18 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	height: 90px;
+	margin-top: 26px;
 }
 
 h1 {
 	color: #901C1C;
+	font-size: 36px;
+	font-weight: 400;
 }
 
 h1.title {
-	margin-right: 2rem;
+	margin-right: 100px;
+	margin-top: 44px;
 }
 
 #fullName {
@@ -44,7 +60,7 @@ h1.title {
 	font-weight: bold;
 	position: fixed;
 	bottom: 7%;
-	left: 16%;
+	left: 17%;
 }
 
 #videoTitle {
@@ -53,13 +69,14 @@ h1.title {
   text-align: left;
   font-weight: bold;
   position: fixed;
-  bottom: 17%;
-  left: 11%;
+	bottom: 20%;
+  left: 19%;
 }
 
 .logo {
 	height: 50px;
 	margin-left: 100px;
+	margin-top:44px;
 	cursor: pointer;
 }
 
@@ -76,8 +93,7 @@ h1.title {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 70px;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin: 71px 0;
 }
 
 @media screen and (max-width: 1079px) {
@@ -139,7 +155,6 @@ h1.title {
 .photographer_section article h2 {
 	color: #D3573C;
 	font-size: 36px;
-	margin-top: 10px;
 	margin-bottom: 0;
 }
 
@@ -170,7 +185,7 @@ h1.title {
 	border-radius: 50%;
 	object-fit: cover;
 	cursor: pointer;
-	box-shadow: 0px 2px 5px 0px grey !important;
+	box-shadow: 0px 2px 3px 0px grey !important;
 }
 
 .photographer_section article img:hover {

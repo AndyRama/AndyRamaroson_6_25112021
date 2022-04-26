@@ -132,7 +132,7 @@ input {
   padding: 8px;
   border: 2px solid #DB8876;
   font-size: 36px;
-  font-weight: normal!important;
+  font-weight: normal !important;
 }
 
 /* header presentation */
@@ -161,7 +161,7 @@ input {
 	width: 200px;
 	border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0px 2px 5px 0px grey;
+  box-shadow: 0px 2px 3px 0px grey;
 }
 
 /* Dropdown Text */
@@ -260,12 +260,12 @@ input {
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-between;;
+  justify-content: space-between;
   align-content: center;
 }
 
 .cards {
-  margin-left: 5rem;
+  margin: auto ; 
   display: flex;
   margin-bottom: 5rem;
   margin-top: 6rem;
@@ -462,8 +462,7 @@ input {
 .cardBox-vid {
   width: 800px;
   border-radius: 5px;
-  position: fixed;
-  top: 9rem;
-  left: 7rem;
+  margin-top: 15rem;
+  margin-left: 5rem !important;
   box-shadow: 3px 0px 10px 0px darkgrey;
 }

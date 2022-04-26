@@ -32,20 +32,22 @@
       </div>
 
       <!-- filter -->
-      <span class="trier-par-txt">Trier par</span>
-      <div class="dropdown">
-        <i class="fas fa-chevron-down" id="drop-down-btn"></i>
-        <button  class="dropbtn trierBtn" id="text1">Popularité</button>
-        <i class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></i>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="javascript:void(0)" id="text2" class="trierBtn">Date</a>
-          <a href="javascript:void(0)" id="text3" class="trierBtn">Titre</a>
+      <div class="mainContainer">
+        <span class="trier-par-txt">Trier par</span>
+        <div class="dropdown">
+          <i class="fas fa-chevron-down" id="drop-down-btn"></i>
+          <button  class="dropbtn trierBtn" id="text1">Popularité</button>
+          <i class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></i>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="javascript:void(0)" id="text2" class="trierBtn">Date</a>
+            <a href="javascript:void(0)" id="text3" class="trierBtn">Titre</a>
+          </div>
         </div>
+        
+        <!-- Gallery container -->
+        <div class="card-container"></div>  
+        
       </div>
-
-      <!-- Gallery container -->
-      <div class="card-container"></div>  
-
      <!-- Counter likes and price -->
       <span class="price_badge"><span id="nbLikes"></span><i class="card-likeB fas fa-heart"></i><div id="price"></div></span>
     </main>
