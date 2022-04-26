@@ -137,7 +137,7 @@ input {
 }
 
 /* header presentation */
-/* .logoP {
+.logoP {
   height: 50px;
 	margin-left: 68px;
 	margin-top:44px;
@@ -146,7 +146,7 @@ input {
 
 .logoP:hover {
 	transform: scale(1.02);
-} */
+}
 
 .profil-title {
   font-weight: 400;
@@ -372,7 +372,7 @@ input {
   height: 20px;
   position: fixed;
   bottom: 0;
-  right: 36px;
+  right: 30px;
   background-color: #db8876;
   display: flex;
   align-items: center;
