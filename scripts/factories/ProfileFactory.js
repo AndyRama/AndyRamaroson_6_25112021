@@ -32,9 +32,9 @@ function profileFactories(photographeObject) {
 		photographeName.innerHTML = name;   
 
     //display media video/image in profile
-    let nbLike = 0;
-
     displayMedias(medias); 
+    
+    let nbLike = 0;
     medias.map(media => {
       nbLike += media.likes;    
     })          
@@ -67,7 +67,7 @@ function profileFactories(photographeObject) {
 
       // sort by DATE 
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
-      //supression des données presentes
+      //Remove data presente
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
 
@@ -88,7 +88,7 @@ function profileFactories(photographeObject) {
       else if (a.title.toLowerCase() > b.title.toLowerCase()) {return 1;}
       })
 
-      //supression des cards presentes
+      //Remove cards presente
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
 
@@ -111,12 +111,12 @@ function displayMedias(medias) {
   let elementToDisplay;
   let type;
 
-  if(media.image){ 
+  if(media.image) { 
     photoToDisplay = media.image; 
     type = "image";
     elementToDisplay = `<img src="./assets/photos/${photoToDisplay}" alt="${media.title}" class ="card-img">`;
   } else {
-    type= "video";
+    type = "video";
     photoToDisplay = media.video; 
     elementToDisplay = `<video src="./assets/photos/${photoToDisplay}" class ="card-video" alt="${media.title}"></video>`;
   }
@@ -128,10 +128,10 @@ function displayMedias(medias) {
     mediaLike++
   }
   
-  //return card image with model
+  // return card image with model
   const mediaCardImage = `
     <div class="cards" >      
-      <a class="card" href="#" data-id="${media.id}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
+      <a class="card" href="#" data-id="${media.id}" alt="${media.title} data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
         ${elementToDisplay}
       </a>
       <div class="card-content">
@@ -153,7 +153,7 @@ const body = document.querySelector('body');
 
 document.addEventListener('keydown', (key) => {
   //ENTER KEY
-  if(key.code == "Enter"){
+  if(key.code == "Enter") {
   }
   
   //ESC KEY
