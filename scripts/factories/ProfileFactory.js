@@ -131,7 +131,7 @@ function displayMedias(medias) {
   // return card image with model
   const mediaCardImage = `
     <div class="cards" >      
-      <a class="card" href="#" data-id="${media.id}" alt="${media.title} data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
+      <a class="card" href="#" data-id="${media.id}" alt="${media.title}" data-title="${media.title}" data-url="${photoToDisplay}" data-type="${type}" onclick="displayLightBox('${media.title}','${photoToDisplay}','${type}','${media.id}')">
         ${elementToDisplay}
       </a>
       <div class="card-content">

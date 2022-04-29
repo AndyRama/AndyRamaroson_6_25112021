@@ -1,5 +1,5 @@
 // Open the lightbox
-function displayLightBox(title, url, type,id){
+function displayLightBox(title, url, type, id){
   const lightBoxbody = document.getElementById('lightBoxBody');
   const bg = document.getElementById('lightBg');
   const body = document.querySelector('body');
@@ -20,7 +20,7 @@ function displayLightBox(title, url, type,id){
 
     oldClass.style.display = "block";
     oldClass.style.display = "photoTitle";
-
+    
     containerImage.innerHTML = `
      <img src="./assets/photos/${url}" alt="${title}" class="cardBox-img">
     `
@@ -28,7 +28,7 @@ function displayLightBox(title, url, type,id){
     oldClass.style.display = "none";
 
     containerImage.innerHTML = `
-     <video src="./assets/photos/${url}" class ="cardBox-vid" alt="${title}" controls="controls"></video>
+     <video src="./assets/photos/${url}" alt="${title}" class ="cardBox-vid" controls="controls"></video>
      <div id="videoTitle">${title}</div>
     `
   }

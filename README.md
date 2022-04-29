@@ -25,7 +25,6 @@ Create an accessible site for a platform of photographers.
 <ul>
   <li>When the lightbox is displayed, there is a cross in the corner to close the window.</li>
   <li>Navigation buttons allow you to move from one element media to another in the lightbox.</li>
-  <li>When the user clicks on the "Like" icon, the number of likes displayed is incremented.</li>
   <li>The arrow keys on the keyboard also allow you to navigate between media in the lightbox.</li>
   <li>Use the commands keyboard to navigate the site, like the arrow keys in the lightbox".</li>
   <li>Media can be sorted by popularity or by title.</li>

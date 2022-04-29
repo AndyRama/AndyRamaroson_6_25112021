@@ -1,11 +1,12 @@
 .photograph-header {
   background-color: #FAFAFA;
   height: 300px;
-  margin: 40px 60px;
+  margin: 30px 50px;
   display:flex ;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 50px;
 }
 
 .contact_button {
@@ -193,10 +194,10 @@ input {
   font-size: 19px;
   border: 1px solid #901C1C;
   cursor: pointer;
-  border-radius: 5px 5px 5px 5px;
   height: 60px;
   font-weight: bold;
   width: 200px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -226,10 +227,10 @@ input {
   text-decoration: none;
   display: block;
   border-top: 2px solid white;
-  margin-left: -0.5rem;
+  /* margin-left: -0.5rem; */
   font-weight: bold;  
   font-size: 19px;
-  width: 67px;
+  width: 59px;
   height: 32px;
 }
 
@@ -277,13 +278,14 @@ input {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-content: center;
+  gap: 20px;
 }
 
 .cards {
   margin: auto ; 
   display: flex;
   margin-bottom: 5rem;
-  margin-top: 2.24rem;
+  margin-top: 10px;
   width: 400px;
 }
 
@@ -422,7 +424,7 @@ input {
 .closeIcon {
   position: absolute;
   right: 1rem;
-  top: 0.5rem;
+  top: 4rem;
   font-size: 1.7rem;
   color: #901C1C;
 }
