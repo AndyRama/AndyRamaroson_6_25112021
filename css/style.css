@@ -3,7 +3,7 @@
 @import url("dropdown.css");
 @import url("cards.css");
 @import url("lightBox.css");
-@import url("responsive.css");
+/* @import url("responsive.css"); */
 
 body {
 	font-family: "DM Sans", sans-serif;
@@ -64,8 +64,8 @@ h1.title {
 	text-align: left;
 	font-weight: bold;
 	position: fixed;
-	bottom: 7%;
-	left: 16%;
+	bottom: 5%;
+	left: 7%;
 }
 
 #videoTitle {
@@ -74,7 +74,7 @@ h1.title {
   text-align: left;
   font-weight: bold;
   position: fixed;
-	bottom: 18%;
+	bottom: 21%;
 	left: 7%;
 }
 

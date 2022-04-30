@@ -60,7 +60,7 @@
 
 .cardBox-img {
   height: 78vh;
-  width: 80vh;
+  width: 630px;
   border-radius: 5px;
   margin-top: 4rem;
   box-shadow: 3px 0px 10px 0px darkgrey;
@@ -85,8 +85,8 @@
 }
 
 .cardBox-vid {
-  width: 800px;
+  width: 630px;
   border-radius: 5px;
-  margin-top: 8rem;
+  margin-top: 4rem;
   box-shadow: 3px 0px 10px 0px darkgrey;
 }
