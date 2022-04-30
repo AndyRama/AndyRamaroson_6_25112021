@@ -1,0 +1,92 @@
+#lightBoxContainer {
+  width: 100%;
+  height: 200vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+}
+
+#lightBoxBody { 
+  background-color: rgba(255, 255, 255);
+  display: none;
+  width: 60%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,0);
+  top: 2%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#lightBg {
+  display: none;
+  height: 150vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255);
+  padding-top: 50px;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  font-size: 1.7rem;
+  color: #901C1C;
+}
+
+.leftIcon {
+  position: absolute;
+  left: 1rem;
+  top: 48%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #901C1C;
+}
+
+.rightIcon {
+  position: absolute;
+  right: 1rem;
+  top: 46%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #901C1C;
+}
+
+.cardBox-img {
+  height: 78vh;
+  width: 80vh;
+  border-radius: 5px;
+  margin-top: 4rem;
+  box-shadow: 3px 0px 10px 0px darkgrey;
+}
+
+.lightBoxCounter {
+  position: fixed;
+  bottom: 10.5%;
+  right: 22%;
+  color:#901C1C;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lightBoxLike {
+  position: fixed;
+  bottom: 11%;
+  right: 19%;
+  color: #901C1C;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cardBox-vid {
+  width: 800px;
+  border-radius: 5px;
+  margin-top: 8rem;
+  box-shadow: 3px 0px 10px 0px darkgrey;
+}

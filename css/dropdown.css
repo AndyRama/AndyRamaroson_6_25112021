@@ -1,0 +1,90 @@
+/* Dropdown Text */
+#label_trier {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Dropdown Button */
+.dropdown>.dropbtn {
+  background-color: #901C1C;
+  color: white;
+  padding: 0.5rem 3.08rem;
+  font-size: 19px;
+  border: 1px solid #901C1C;
+  cursor: pointer;
+  height: 60px;
+  font-weight: bold;
+  width: 200px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  width: 170px;
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #901C1C;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  border-radius: 0 0 5px 5px;
+  transition: all 1.00s ease-in-out;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 4.42rem;
+  text-decoration: none;
+  display: block;
+  border-top: 2px solid white;
+  font-weight: bold;  
+  font-size: 19px;
+  width: 59px;
+  height: 32px;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-chevron-up{
+  position: absolute;
+  top: 1.5rem;
+  right: -1rem;
+  color: white;
+}
+
+.fa-chevron-up-none{
+  display: none;
+}
+
+#close-up-icon{
+  cursor: pointer;
+}
+
+.trier-par-txt{
+  margin-left: 3rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 19px;
+}
+
+.fa-chevron-down{
+  position: absolute;
+  right: -1rem;
+  top: 1.5rem;
+  color: white;
+  cursor: pointer;
+}

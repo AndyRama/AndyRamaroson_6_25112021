@@ -30,6 +30,21 @@
   cursor: pointer;
 }
 
+.modal header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal header img {
+  cursor: pointer;
+}
+
+.modal header h2 {
+  font-size: 64px;
+  font-weight: normal;
+  text-align: center;
+}
+
 .modal {
   border-radius: 5px;
   background-color: #DB8876;
@@ -53,21 +68,6 @@
   position: fixed;
   top: 0%;
   left: 0%;
-}
-
-.modal header {
-  justify-content: space-between;
-  width: 100%;
-}
-
-.modal header img {
-  cursor: pointer;
-}
-
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
 }
 
 form {
@@ -180,192 +180,9 @@ input {
   box-shadow: 0px 2px 3px 0px grey;
 }
 
-/* Dropdown Text */
-#label_trier {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* Dropdown Button */
-.dropdown>.dropbtn {
-  background-color: #901C1C;
-  color: white;
-  padding: 0.5rem 3.08rem;
-  font-size: 19px;
-  border: 1px solid #901C1C;
-  cursor: pointer;
-  height: 60px;
-  font-weight: bold;
-  width: 200px;
-  border-radius: 5px 5px 5px 5px;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  width: 170px;
-  position: relative;
-  display: inline-block;
-  margin: 1rem;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #901C1C;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  display: none;
-  border-radius: 0 0 5px 5px;
-  transition: all 1.00s ease-in-out;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 0.5rem 4.42rem;
-  text-decoration: none;
-  display: block;
-  border-top: 2px solid white;
-  /* margin-left: -0.5rem; */
-  font-weight: bold;  
-  font-size: 19px;
-  width: 59px;
-  height: 32px;
-}
-
-.show {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-.fa-chevron-up{
-  position: absolute;
-  top: 1.5rem;
-  right: -1rem;
-  color: white;
-}
-
-.fa-chevron-up-none{
-  display: none;
-}
-
-#close-up-icon{
-  cursor: pointer;
-}
-
-.trier-par-txt{
-  margin-left: 3rem;
-  font-weight: bold;
-  font-family: sans-serif;
-  font-size: 19px;
-}
-
-.fa-chevron-down{
-  position: absolute;
-  right: -1rem;
-  top: 1.5rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* cards-image NEW */
-.card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-between;
-  align-content: center;
-  gap: 20px;
-}
-
-.cards {
-  margin: auto ; 
-  display: flex;
-  margin-bottom: 5rem;
-  margin-top: 10px;
-  width: 400px;
-}
-
-.card {
-  flex-direction: column;
-  display: flex;
-}
-
-.card-img {
-  height: 350px;
-  width: 400px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 0px darkgrey;
-}
-
-.card-img:hover {
-  transform: scale(1.018);
-}
-
-.card-content {
-  height: 30px;
-  position: relative;
-  font-size: 24px;
-  top: 100%;
-}
-
-.card-title {
-  position: relative;
-  top: -50%;
-  left: -25rem;
-  color:#901C1C;
-  width: 350px;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 31px;
-}
-
-.card-counter {
-  position: absolute;
-  top: 60%;
-  color:#901C1C;
-  left: -3.5rem;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 31px;
-}
-
-.card-video {
-  height: 350px;
-  width: 400px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card-video:hover {
-  transform: scale(1.018);
-}
-
-.card-video-light{
-  width: 90%;
-  height:95%;
-}
-
 #price{
   color:black;
   margin-left: 5rem;
-}
-
-.card-like {
-  margin-left: 5px;
-  color:#901C1C;
-  cursor: pointer;
-}
-
-.card-like:hover {
-  transform: scale(1.2);
-}
-.card-likeB {
-  margin-left: -2rem;
-  color:black;
 }
 
 /* element float in the page down rigth */
@@ -387,104 +204,3 @@ input {
   text-align: right;
 }
 
-#lightBoxContainer {
-  width: 100%;
-  height: 200vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: none;
-}
-
-#lightBoxBody { 
-  background-color: rgba(255, 255, 255);
-  display: none;
-  width: 60%;
-  height: 100%;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%,0);
-  top: 2%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-#lightBg {
-  display: none;
-  height: 150vh;
-  width: 100%;
-  background-color: rgba(255, 255, 255);
-  padding-top: 50px;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-}
-
-.closeIcon {
-  position: absolute;
-  right: 1rem;
-  top: 4rem;
-  font-size: 1.7rem;
-  color: #901C1C;
-}
-
-.leftIcon {
-  position: absolute;
-  left: 1rem;
-  top: 48%;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #901C1C;
-}
-
-.rightIcon {
-  position: absolute;
-  right: 1rem;
-  top: 46%;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #901C1C;
-}
-
-.cardBox-img {
-  height: 78vh;
-  width: 80vh;
-  border-radius: 5px;
-  margin-top: 4rem;
-  box-shadow: 3px 0px 10px 0px darkgrey;
-}
-
-.lightBoxCounter {
-  position: fixed;
-  bottom: 10.5%;
-  right: 22%;
-  color:#901C1C;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.lightBoxLike {
-  position: fixed;
-  bottom: 11%;
-  right: 19%;
-  color: #901C1C;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.lightBoxLikeV {
-  position: fixed;
-  bottom: 12%;
-  right: 5%;
-  color: #901C1C;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.cardBox-vid {
-  width: 800px;
-  border-radius: 5px;
-  margin-top: 8rem;
-  box-shadow: 3px 0px 10px 0px darkgrey;
-}
