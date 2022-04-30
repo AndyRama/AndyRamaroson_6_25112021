@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 
     <!-- Header -->
     <header>
-      <a href="./index.html" alt="Fisheye Home page">
+      <a href="./index.html">
         <img src="assets/images/logo.png" class="logoP" width="210" height="60" alt="logo"/>
       </a>
     </header>
@@ -26,8 +26,8 @@
             <h3 class="location"></h3>
             <p class="slogan"></p>
           </div>
-          <button class="contact_button" onclick="displayModal()" alt="">Contactez-moi</button>
-          <img src="" id="thumbs" alt="profile du photographe" >
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          <img src="#" id="thumbs" alt="profile du photographe" >
         </div>
       </div>
 
@@ -57,7 +57,7 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />         
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="close icon"/>         
         </header>
         <br/>
         <h3 id="fullName">Andy Ramaroson</h3>
@@ -75,7 +75,7 @@
           <div class="result" id="emailError"></div>
           
           <label>Votre message</label>
-          <textarea type="textarea" id="message"></textarea>
+          <textarea id="message"></textarea>
           <div class="result" id="messageError"></div>
           
           <button class="submit contact_button">Envoyer</button>
