@@ -1,3 +1,4 @@
+// get Photographers
 async function getPhotographers() {
 	//Change constant to variable. We declare a "photographers" array
 	let photographers = [];
@@ -6,10 +7,11 @@ async function getPhotographers() {
 	await fetch("photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
-		console.log(photographers);
+
 	return { photographers}
 }
 
+// display data photographer
 async function displayData(photographers) {
 	const photographersSection = document.querySelector(".photographer_section");
 

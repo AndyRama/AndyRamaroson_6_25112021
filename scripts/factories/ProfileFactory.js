@@ -55,10 +55,13 @@ function profileFactories(photographeObject) {
       //sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
 
-      //supression des données presentes
+      //remove datas presents
       document.querySelector(".card-container").innerHTML = "";
+
+      // new array order
       displayMedias(newArray);   
-      
+
+      //initialisation of delfault drop down
       hidenPart.classList.remove("show");
       chevronUpIcon.classList.add("fa-chevron-up-none");
       chevronDownIcon.classList.toggle("fa-chevron-up-none");
@@ -72,7 +75,7 @@ function profileFactories(photographeObject) {
       // sort by DATE 
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
 
-      //Remove data presente
+     
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
 
@@ -92,7 +95,6 @@ function profileFactories(photographeObject) {
       else if (a.title.toLowerCase() > b.title.toLowerCase()) {return 1;}
       })
 
-      //Remove cards presente
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
 
@@ -187,7 +189,7 @@ function incrementLike(e) {
   const cookie = localStorage.getItem(id);
 
   if(cookie == null) {
-    e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText) +1;
+    e.firstElementChild.innerText = parseInt(e.firstElementChild.innerText)+1;
     document.getElementById("nbLikes").innerText = parseInt(document.getElementById("nbLikes").innerText)+1;
     localStorage.setItem(id,"click");
   }

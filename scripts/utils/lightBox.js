@@ -33,6 +33,7 @@ function displayLightBox(title, url, type, id){
     `
   }
 
+  //hidden arrow if begin or end elements of gallery doesn't exist
   const card = document.querySelector(`.card[data-id="${id}"]`);
   const parent = card.parentNode;
   const prevElement = parent.previousElementSibling;

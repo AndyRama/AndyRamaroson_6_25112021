@@ -10,23 +10,23 @@ function photographerFactory(data) {
 		img.setAttribute("src", picture);
 
 		//add title
-		const h2 = document.createElement('h2');
-		h2.textContent = name;
+		const h1 = document.createElement('h1');
+		h1.textContent = name;
 
 		//add city & country
-		const hCity = document.createElement('h3');
-		hCity.classList.add('city');
+		const hCity = document.createElement('h2');
 		hCity.textContent = `${city}, ${country}`; 
+		hCity.classList.add('city');
 
 		//add tagline
 		const pTagLine = document.createElement('p');
-		pTagLine.classList.add('tagline');
 		pTagLine.textContent = tagline; 
+		pTagLine.classList.add('tagline');
 
 		//add price
 		const sPrice = document.createElement('span');
+		sPrice.textContent = `${price}€ /jour`;
 		sPrice.classList.add('price');
-		sPrice.textContent = `${price}€/jour`;
 
 		//link profile
 		function linkProfile() {
@@ -34,7 +34,7 @@ function photographerFactory(data) {
 		}
 
 		article.appendChild(img);
-		article.appendChild(h2);
+		article.appendChild(h1);
 		article.appendChild(hCity);
 		article.appendChild(pTagLine);
 		article.appendChild(sPrice);
