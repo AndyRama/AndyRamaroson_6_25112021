@@ -31,17 +31,6 @@
 }
 
 /* header presentation */
-.logoP {
-  height: 50px;
-	margin-left: 68px;
-	margin-top:44px;
-	cursor: pointer;
-}
-
-.logoP:hover {
-	transform: scale(1.02);
-}
-
 .profil-title {
   font-weight: 400;
   font-size: 64px;

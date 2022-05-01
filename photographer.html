@@ -12,8 +12,8 @@
 
     <!-- Header -->
     <header>
-      <a href="./index.html">
-        <img src="assets/images/logo.png" class="logoP" width="210" height="60" alt="logo"/>
+      <a href="./index.html" target="_self">
+        <img src="assets/images/logo.png" class="logo" alt="FishEye logo"/>
       </a>
     </header>
 
@@ -23,33 +23,33 @@
         <div class="photograph-header">
           <div class="presentation">
             <h1 class="profil-title"></h1>
-            <h3 class="location"></h3>
+            <h2 class="location"></h2>
             <p class="slogan"></p>
           </div>
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-          <img src="#" id="thumbs" alt="profile du photographe" >
+          <img src="./assets/photographers/account.png" id="thumbs" alt="image de profile du photographe" >
         </div>
       </div>
 
-      <!-- filter -->
+      <!-- filter dropdown -->
       <div class="mainContainer">
         <span class="trier-par-txt">Trier par</span>
         <div class="dropdown">
-          <i class="fas fa-chevron-down" id="drop-down-btn"></i>
+          <em class="fas fa-chevron-down" id="drop-down-btn"></em>
           <button  class="dropbtn trierBtn border" id="text1">Popularité</button>
-          <i class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></i>
+          <em class="fas fa-chevron-up fa-chevron-up-none" id="close-up-icon"></em>
           <div id="myDropdown" class="dropdown-content">
-            <a href="javascript:void(0)" id="text2" class="trierBtn">Date</a>
-            <a href="javascript:void(0)" id="text3" class="trierBtn">Titre</a>
+            <a href="javascript:void(0)" target="_self" id="text2" class="trierBtn">Date</a>
+            <a href="javascript:void(0)" target="_self" id="text3" class="trierBtn">Titre</a>
           </div>
         </div>
         
         <!-- Gallery container -->
-        <div class="card-container"></div>  
-        
+        <div class="card-container"></div>          
       </div>
-     <!-- Counter likes and price -->
-      <span class="price_badge"><span id="nbLikes"></span><i class="card-likeB fas fa-heart"></i><div id="price"></div></span>
+
+      <!-- Counter likes and price -->
+      <span class="price_badge"><span id="nbLikes"></span><em class="card-likeB fas fa-heart"></em><div id="price"></div></span>
     </main>
 
     <!-- Modal contact Form -->
@@ -57,24 +57,24 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="close icon"/>         
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="logo du boutton de fermeture du formulaire"/>         
         </header>
         <br/>
         <h3 id="fullName">Andy Ramaroson</h3>
         <form name="form-field" id="form-field" method="get" action="index.html">
-          <label>Prénom</label>
-          <input type="text" id="firstName"/>
+          <label for="firstName">Prénom</label>
+          <input type="prénom" id="firstName"/>
           <div class="result" id="firstError"></div>
           
-          <label>Nom</label>
-          <input type="text" id="lastName"/>
+          <label for="lastName">Nom</label>
+          <input type="nom" id="lastName"/>
           <div class="result" id="lastError"></div>
           
-          <label>Email</label>
-          <input type="text" id="email"/>
+          <label for="email">Email</label>
+          <input type="email" id="email"/>
           <div class="result" id="emailError"></div>
           
-          <label>Votre message</label>
+          <label for="message">Votre message</label>
           <textarea id="message"></textarea>
           <div class="result" id="messageError"></div>
           
@@ -87,10 +87,10 @@
     <div id="lightBg">
       <div class="lightBoxContainer">
         <div id="lightBoxBody">
-          <i class="fas fa-times X-close closeIcon" onclick="closeLightBox(this)"></i>
+          <em class="fas fa-times X-close closeIcon" onclick="closeLightBox(this)"></em>
           <div id="lightBox-img"></div>
-          <i class="fas fa-chevron-left leftIcon" onclick="prevLightBox(this)"></i>
-          <i class="fas fa-chevron-right rightIcon" onclick="nextLightBox(this)"></i>
+          <em class="fas fa-chevron-left leftIcon" onclick="prevLightBox(this)"></em>
+          <em class="fas fa-chevron-right rightIcon" onclick="nextLightBox(this)"></em>
           <div id="photoTitle"></div>
         </div>
       </div>

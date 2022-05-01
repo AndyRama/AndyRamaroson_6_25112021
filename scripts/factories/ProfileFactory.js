@@ -7,50 +7,54 @@ function profileFactories(photographeObject) {
   let newArray = []; 
 
   function fillPagePhotographe() {    
-    //Thumbs    
-    const img = document.getElementById('thumbs');
-    img.setAttribute("src", thumbs);      
-
+    
     //FullName
     const title = document.querySelector('.profil-title');
     title.innerHTML = name;
-
+    
     //Come from
     const location = document.querySelector('.location');
     location.innerHTML = `${city}, ${country}`;
-
+    
     //CatchWords
     const catchWords = document.querySelector('.slogan');
     catchWords.innerHTML = tagline;
-
-    //add price
-    const priceDay = document.getElementById("price");
-    priceDay.innerHTML = `${price}€ / jour`;
-
+    
+    //Thumbs    
+    const img = document.getElementById('thumbs');
+    img.setAttribute("src", thumbs);      
+        
     //FullName in modalContact
     const photographeName = document.getElementById("fullName");
 		photographeName.innerHTML = name;   
-
+    
+    //add price in badge
+    const priceDay = document.getElementById("price");
+    priceDay.innerHTML = `${price}€ / jour`;
+    
     //display media video/image in profile
     displayMedias(medias); 
     
     let nbLike = 0;
     medias.map(media => {
       nbLike += media.likes;    
-    })          
+    })   
+
     document.getElementById("nbLikes").innerText = nbLike;   
   }
-  
+
+  // order and dynamic text dropdown content
   const btnOrder = Array.from(document.getElementsByClassName('trierBtn'));    
   btnOrder.forEach((btn, index) => btn.addEventListener('click', () => {    
     if( index == 0) { 
       
+      const text1 = document.getElementById('text1');
       const text2 = document.getElementById('text2');
       const text3 = document.getElementById('text3');
-      const text1 = document.getElementById('text1');
 
       //sort by POPULARITY   
       newArray = medias.sort((a, b) => {return b.likes - a.likes})
+
       //supression des données presentes
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);   
@@ -67,6 +71,7 @@ function profileFactories(photographeObject) {
 
       // sort by DATE 
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
+
       //Remove data presente
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
@@ -75,7 +80,6 @@ function profileFactories(photographeObject) {
       chevronUpIcon.classList.add("fa-chevron-up-none");
       chevronDownIcon.classList.toggle("fa-chevron-up-none");
 
-      //Dynamic text content
       text1.innerText = "Date";
       text2.innerText = "Popularité";
       text3.innerText = "Titre";
@@ -104,6 +108,7 @@ function profileFactories(photographeObject) {
   return { name, thumbs, picture, pictureVideo, fillPagePhotographe}
 }
 
+//display media video/image in profile
 function displayMedias(medias) {
   medias.map(media => {
   const cardContainer = document.querySelector('.card-container');

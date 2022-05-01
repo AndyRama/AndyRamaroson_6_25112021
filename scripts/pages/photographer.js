@@ -10,14 +10,17 @@ async function getPhotographerById() {
 		.then((data) => (photographers = data.photographers))
     
     let photographeObject = photographers.find(photographe => photographe.id == id)
-
+		
     await fetch("./photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (medias = data.media))
 
+		// console.log(photographeObject);
+		
     const mediaArray = medias.filter(media => media.photographerId == id)
     photographeObject.medias = mediaArray;
 
+    // console.log(mediaArray);
       
 	return { photographer: photographeObject }
 }

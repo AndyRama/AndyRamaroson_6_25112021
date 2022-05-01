@@ -6,6 +6,7 @@ async function getPhotographers() {
 	await fetch("photographers.json")
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
+		console.log(photographers);
 	return { photographers}
 }
 

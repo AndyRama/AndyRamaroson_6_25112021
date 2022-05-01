@@ -4,8 +4,12 @@ function photographerFactory(data) {
 
 	function getUserCardDOM() {
 		const article = document.createElement('article');
+    
+		//add image
 		const img = document.createElement('img');
 		img.setAttribute("src", picture);
+
+		//add title
 		const h2 = document.createElement('h2');
 		h2.textContent = name;
 
@@ -31,7 +35,7 @@ function photographerFactory(data) {
 
 		article.appendChild(img);
 		article.appendChild(h2);
-		article.appendChild(hCity)
+		article.appendChild(hCity);
 		article.appendChild(pTagLine);
 		article.appendChild(sPrice);
 		article.addEventListener("click", linkProfile);
