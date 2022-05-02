@@ -11,7 +11,6 @@ function displayLightBox(title, url, type, id){
   const photoTitle = document.getElementById('photoTitle');
   photoTitle.innerText = title;
 
-
   lightBoxbody.setAttribute("data-id", id);
   let containerImage = document.getElementById("lightBox-img");
   const oldClass = document.getElementById("photoTitle");
@@ -103,3 +102,33 @@ function nextLightBox(e) {
   const title = nextCard.getAttribute("data-title"); 
   displayLightBox(title,url,type,idnext);     
 }
+
+//LightBox with keyboard
+const LightBoxContent = document.getElementById("lightBoxBody");
+const bg = document.getElementById('lightBg');
+const body = document.querySelector('body');
+
+document.addEventListener('keydown', (key) => {
+  //ENTER KEY
+  if(key.code == "Enter") {
+  }
+  
+  //ESC KEY
+  else if(key.code == "Escape") {
+    LightBoxContent.style.display = "none";    
+    bg.style.display = 'none';
+    body.classList.remove('no-scroll');
+  }
+
+  //LEFT KEY
+  else if(key.code == "ArrowLeft"){
+    const btnLeft = document.querySelector(".leftIcon");
+    btnLeft.click();
+  }
+
+  //RIGHT KEY
+  else if(key.code == "ArrowRight"){
+    const btnRight = document.querySelector(".rightIcon");
+    btnRight.click();
+  }
+})

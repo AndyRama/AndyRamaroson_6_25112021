@@ -8,7 +8,7 @@ async function getPhotographers() {
 		.then(reponse => reponse.json())
 		.then((data) => (photographers = data.photographers))
 
-	return { photographers}
+	return { photographers }
 }
 
 // display data photographer

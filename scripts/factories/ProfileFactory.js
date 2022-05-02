@@ -75,7 +75,6 @@ function profileFactories(photographeObject) {
       // sort by DATE 
       newArray = photographeObject.medias.sort((a, b) => { return new Date(a.date).valueOf() - new Date(b.date).valueOf();}) 
 
-     
       document.querySelector(".card-container").innerHTML = "";
       displayMedias(newArray);
 
@@ -152,36 +151,6 @@ function displayMedias(medias) {
     cardContainer.innerHTML = cardContainer.innerHTML + mediaCardImage;
   })
 }
-
-//LightBox with keyboard
-const LightBoxContent = document.getElementById("lightBoxBody");
-const bg = document.getElementById('lightBg');
-const body = document.querySelector('body');
-
-document.addEventListener('keydown', (key) => {
-  //ENTER KEY
-  if(key.code == "Enter") {
-  }
-  
-  //ESC KEY
-  else if(key.code == "Escape") {
-    LightBoxContent.style.display = "none";    
-    bg.style.display = 'none';
-    body.classList.remove('no-scroll');
-  }
-
-  //LEFT KEY
-  else if(key.code == "ArrowLeft"){
-    const btnLeft = document.querySelector(".leftIcon");
-    btnLeft.click();
-  }
-
-  //RIGHT KEY
-  else if(key.code == "ArrowRight"){
-    const btnRight = document.querySelector(".rightIcon");
-    btnRight.click();
-  }
-})
 
 //Add likes  
 function incrementLike(e) {

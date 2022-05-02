@@ -8,7 +8,6 @@ const mail = document.getElementById("email");
 const formField= document.getElementById("form-field");
 const mess = document.getElementById("message");
 
-
 //Check patern Email
 const emailError = document.getElementById("emailError");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
@@ -21,7 +20,6 @@ function displayModal() {
   modal.style.display = "block";
   modal.classList.add('scroll');
   body.classList.add('no-scroll');
-
 }
 
 //Close modal 
